@@ -1,0 +1,54 @@
+---
+/**
+ * Propósito de la Página: Explorador de equipos y herramientas premium para peluquería y barbería.
+ * Componentes Utilizados:
+ *   - Layout: Estructura base con Header y Footer.
+ *   - CatalogHero: Encabezado de la página.
+ *   - SidebarFilters: Filtros de categorías y marcas.
+ *   - CatalogProductCard: Fichas técnicas de productos.
+ *   - CatalogBanner: Publicidad interna de servicios.
+ *   - PartnershipCard: Validación de distribuidores oficiales.
+ *   - TechnicalSupportCTA: Llamado a la acción para soporte.
+ * Estructura: Layout de dos columnas (Filtros + Grilla) con secciones de ancho completo arriba y abajo.
+ */
+
+import Layout from '../layouts/Layout.astro';
+import CatalogHero from '../components/catalogo/CatalogHero.astro';
+import SidebarFilters from '../components/catalogo/SidebarFilters.astro';
+import CatalogProductCard from '../components/catalogo/CatalogProductCard.astro';
+import CatalogBanner from '../components/catalogo/CatalogBanner.astro';
+import PartnershipCard from '../components/catalogo/PartnershipCard.astro';
+import TechnicalSupportCTA from '../components/catalogo/TechnicalSupportCTA.astro';
+import equipos from '../data/equipos.json';
+---
+
+<Layout title="Catálogo de Equipos">
+  <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+    <CatalogHero />
+    
+    <div class="flex flex-col lg:flex-row gap-12">
+      <SidebarFilters />
+      
+      <section class="flex-grow">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {equipos.slice(0, 2).map((equipo, index) => (
+            <CatalogProductCard 
+              {...equipo} 
+              loading={index === 0 ? "eager" : "lazy"}
+            />
+          ))}
+          
+          <CatalogBanner />
+          
+          {equipos.slice(2, 3).map((equipo) => (
+            <CatalogProductCard {...equipo} />
+          ))}
+          
+          <PartnershipCard />
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <TechnicalSupportCTA />
+</Layout>

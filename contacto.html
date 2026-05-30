@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Soporte y Reparaciones | STRONGE MACHINE</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#8c4332",
+            "primary": "#6f2d1d",
+            "surface-container-highest": "#e2e2e2",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#615e60",
+            "on-background": "#1a1c1c",
+            "surface-tint": "#934937",
+            "inverse-surface": "#2f3131",
+            "outline-variant": "#dac1bc",
+            "surface": "#f9f9f9",
+            "outline": "#87736e",
+            "surface-container-low": "#f3f3f3",
+            "tertiary-container": "#555959",
+            "tertiary-fixed-dim": "#c3c7c6",
+            "on-primary-fixed-variant": "#763222",
+            "on-primary-fixed": "#3c0701",
+            "background": "#f9f9f9",
+            "secondary": "#605d60",
+            "tertiary-fixed": "#dfe3e2",
+            "surface-bright": "#f9f9f9",
+            "secondary-container": "#ded9db",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#cac5c7",
+            "on-primary-container": "#ffc1b2",
+            "inverse-primary": "#ffb4a3",
+            "on-tertiary-fixed-variant": "#434847",
+            "on-surface-variant": "#54433f",
+            "tertiary": "#3d4241",
+            "surface-container": "#eeeeee",
+            "on-surface": "#1a1c1c",
+            "on-secondary-fixed": "#1c1b1d",
+            "secondary-fixed": "#e6e1e3",
+            "inverse-on-surface": "#f1f1f1",
+            "on-tertiary-container": "#ccd0cf",
+            "primary-fixed": "#ffdad2",
+            "surface-dim": "#dadada",
+            "primary-fixed-dim": "#ffb4a3",
+            "on-tertiary-fixed": "#181c1c",
+            "surface-container-high": "#e8e8e8",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#484648",
+            "surface-variant": "#e2e2e2",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "xs": "8px",
+            "margin": "32px",
+            "lg": "40px",
+            "base": "4px",
+            "md": "24px",
+            "sm": "16px",
+            "xl": "64px"
+          },
+          "fontFamily": {
+            "label-md": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"],
+            "body-md": ["manrope"],
+            "body-lg": ["manrope"]
+          },
+          "fontSize": {
+            "label-md": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+            "headline-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md">
+  <!-- TopAppBar -->
+  <header
+    class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-20 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div
+      class="text-xl font-bold tracking-tighter text-slate-900 uppercase font-['Space_Grotesk'] antialiased tracking-tight">
+      STRONGE MACHINE
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-slate-500 hover:text-slate-900 transition-colors font-['Space_Grotesk'] text-sm uppercase tracking-wider"
+        href="#">Home</a>
+      <a class="text-slate-500 hover:text-slate-900 transition-colors font-['Space_Grotesk'] text-sm uppercase tracking-wider"
+        href="#">Services</a>
+      <a class="text-slate-500 hover:text-slate-900 transition-colors font-['Space_Grotesk'] text-sm uppercase tracking-wider"
+        href="#">Catalog</a>
+      <a class="text-slate-900 font-bold border-b-2 border-slate-900 pb-1 font-['Space_Grotesk'] text-sm uppercase tracking-wider"
+        href="#">Support</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <button class="material-symbols-outlined p-2 text-slate-900 hover:bg-slate-50 rounded-full"
+        data-icon="search">search</button>
+      <button
+        class="bg-primary text-white px-6 py-2.5 text-label-md font-label-md rounded uppercase tracking-widest hover:bg-primary-container transition-all active:scale-95">
+        Request Technician
+      </button>
+    </div>
+  </header>
+  <main class="pt-32 pb-xl px-margin max-w-7xl mx-auto">
+    <!-- Header Section -->
+    <section class="mb-xl text-center md:text-left">
+      <span class="text-primary font-label-md uppercase tracking-widest mb-2 block">Technical Assistance</span>
+      <h1 class="font-headline-lg text-headline-lg text-on-background mb-4">Support &amp; Repair Registration</h1>
+      <p class="text-body-lg text-on-secondary-container max-w-2xl">Professional maintenance for your BaByliss PRO
+        equipment. Register your repair request below or visit our technical center.</p>
+    </section>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+      <!-- Registration Form Canvas -->
+      <div
+        class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant p-lg md:p-xl shadow-sm rounded">
+        <div class="mb-lg border-b border-outline-variant pb-md flex items-center justify-between">
+          <h2 class="font-headline-md text-headline-md text-on-surface">Service Ticket</h2>
+          <span
+            class="text-label-md font-label-md bg-surface-container-highest px-3 py-1 rounded text-on-surface-variant">SERIALIZED
+            WORKFLOW</span>
+        </div>
+        <form class="space-y-lg">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+            <div class="flex flex-col gap-2">
+              <label class="font-label-md text-label-md text-on-surface-variant uppercase">Owner Full Name</label>
+              <input
+                class="bg-surface-container-low border border-outline px-4 py-3 focus:border-primary focus:ring-0 transition-colors text-body-md rounded-none"
+                placeholder="e.g. Julian Martinez" type="text" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="font-label-md text-label-md text-on-surface-variant uppercase">Contact Phone</label>
+              <input
+                class="bg-surface-container-low border border-outline px-4 py-3 focus:border-primary focus:ring-0 transition-colors text-body-md rounded-none"
+                placeholder="+57 300 000 0000" type="tel" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+            <div class="flex flex-col gap-2">
+              <label class="font-label-md text-label-md text-on-surface-variant uppercase">Equipment Model</label>
+              <select
+                class="bg-surface-container-low border border-outline px-4 py-3 focus:border-primary focus:ring-0 transition-colors text-body-md rounded-none">
+                <option>GoldFX Clipper</option>
+                <option>SilverFX Trimmer</option>
+                <option>RoseFX Dryer</option>
+                <option>Lo-Pro FX Series</option>
+                <option>Other BaByliss PRO</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="font-label-md text-label-md text-on-surface-variant uppercase">Service Type</label>
+              <select
+                class="bg-surface-container-low border border-outline px-4 py-3 focus:border-primary focus:ring-0 transition-colors text-body-md rounded-none">
+                <option>Blade Alignment</option>
+                <option>Motor Replacement</option>
+                <option>Battery Optimization</option>
+                <option>General Cleaning &amp; Calibration</option>
+                <option>Warranty Claim</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="font-label-md text-label-md text-on-surface-variant uppercase">Issue Description</label>
+            <textarea
+              class="bg-surface-container-low border border-outline px-4 py-3 focus:border-primary focus:ring-0 transition-colors text-body-md rounded-none"
+              placeholder="Describe the technical failure in detail..." rows="4"></textarea>
+          </div>
+          <div class="pt-md border-t border-outline-variant flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <input class="text-primary focus:ring-primary h-4 w-4 rounded-none border-outline" id="terms"
+                type="checkbox" />
+              <label class="text-body-md text-on-surface-variant text-sm" for="terms">I agree to the repair terms and
+                conditions.</label>
+            </div>
+            <button
+              class="bg-primary text-white px-xl py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-primary-container transition-all"
+              type="submit">Submit Registration</button>
+          </div>
+        </form>
+      </div>
+      <!-- Sidebar Info -->
+      <aside class="lg:col-span-4 space-y-lg">
+        <!-- Status & Availability -->
+        <div class="bg-white border border-outline-variant p-lg rounded">
+          <h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Real-time Availability</h3>
+          <div class="space-y-md">
+            <div class="flex items-center justify-between border-b border-surface-container-highest pb-sm">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary" data-icon="engineering">engineering</span>
+                <span class="text-body-md font-medium">Technicians Online</span>
+              </div>
+              <span class="text-label-md font-label-md px-2 py-1 bg-green-100 text-green-800 rounded">6 ACTIVE</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-surface-container-highest pb-sm">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+                <span class="text-body-md font-medium">Wait Time</span>
+              </div>
+              <span class="text-body-md text-on-surface-variant">~45 mins</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-surface-container-highest pb-sm">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary" data-icon="event_available">event_available</span>
+                <span class="text-body-md font-medium">Next Slot</span>
+              </div>
+              <span class="text-body-md text-on-surface-variant">Today, 2:30 PM</span>
+            </div>
+          </div>
+        </div>
+        <!-- Business Hours Card -->
+        <div class="bg-tertiary-fixed text-on-tertiary-fixed p-lg border border-outline-variant rounded">
+          <h3 class="font-headline-sm text-headline-sm mb-md">Business Hours</h3>
+          <ul class="space-y-sm text-body-md">
+            <li class="flex justify-between"><span>Monday - Friday</span> <span>08:00 - 18:00</span></li>
+            <li class="flex justify-between"><span>Saturday</span> <span>09:00 - 14:00</span></li>
+            <li class="flex justify-between font-bold text-primary"><span>Sunday</span> <span>CLOSED</span></li>
+          </ul>
+        </div>
+        <!-- Location Canvas -->
+        <div class="bg-surface-container-highest border border-outline-variant overflow-hidden rounded">
+          <div class="h-48 bg-slate-200 relative group">
+            <img alt="Location Map"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              data-alt="A clean, high-contrast overhead architectural map of a modern urban commercial district in Bogota, Colombia. The map is styled with a minimalist industrial aesthetic, using a palette of silver, charcoal, and sienna accents to highlight the main repair facility. The lighting is soft and even, emphasizing the precise grid-like layout of the city streets."
+              src="https://lh3.googleusercontent.com/aida/ADBb0ug26pimlYuVWW2uo-YQjPrhV5BqDljrMXNK7Zrv08gVvLuFGiHmbuyzw1VpnVs-M9l1j8rbHLOeMMC6thsFSmOWTzAVfwq_2qg5Dn87qIRhMGTFw8XUA6h47fyiYPvjlP5-WgTtTgO0MkzaQBe2S3Ex62B7niad1eOkffxMwbb85SnQfG3pmxo3WY5S3W4YqaNwKDHYqdzFk4kW_vf8sXMy8LX4rZHctnket40zUP2RAnACU5oP3UNIRC0eRydTXeWg1yJmYNbta10" />
+            <div class="absolute inset-0 bg-primary/10 flex items-center justify-center pointer-events-none">
+              <span class="material-symbols-outlined text-white text-5xl drop-shadow-lg" data-icon="location_on"
+                data-weight="fill">location_on</span>
+            </div>
+          </div>
+          <div class="p-md bg-white">
+            <p class="font-label-md text-label-md text-on-surface uppercase mb-1">HQ Address</p>
+            <p class="text-body-md text-on-surface-variant">Avenida Carrera 15 #93-60, El Chicó, Bogotá, Colombia.</p>
+            <div class="mt-md flex gap-4">
+              <a class="text-primary flex items-center gap-2 hover:underline font-label-md text-label-md" href="#">
+                <span class="material-symbols-outlined text-sm" data-icon="directions">directions</span> GET DIRECTIONS
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Social & Contact -->
+        <div class="flex justify-between items-center p-md border border-outline-variant rounded bg-white">
+          <div class="flex gap-4">
+            <a class="material-symbols-outlined text-on-surface hover:text-primary transition-colors"
+              data-icon="phone_in_talk" href="#">phone_in_talk</a>
+            <a class="material-symbols-outlined text-on-surface hover:text-primary transition-colors" data-icon="mail"
+              href="#">mail</a>
+          </div>
+          <div class="flex gap-4">
+            <a class="text-on-surface hover:text-primary transition-all font-bold tracking-tighter"
+              href="#">INSTAGRAM</a>
+            <a class="text-on-surface hover:text-primary transition-all font-bold tracking-tighter"
+              href="#">LINKEDIN</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <!-- Featured Technical Diagram / Hero Asset -->
+    <section
+      class="mt-xl grid grid-cols-1 md:grid-cols-2 gap-lg items-center bg-white border border-outline-variant p-lg rounded">
+      <div class="order-2 md:order-1">
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-md">Precision Maintenance</h3>
+        <p class="text-body-lg text-on-surface-variant mb-lg">Our technicians use original BaByliss PRO components and
+          specialized calibration tools to ensure your equipment performs like new. Every repair undergoes a 12-point
+          inspection before release.</p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline-variant rounded">
+            <span class="material-symbols-outlined text-primary text-sm" data-icon="verified">verified</span>
+            <span class="text-label-md font-label-md uppercase">Original Parts</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline-variant rounded">
+            <span class="material-symbols-outlined text-primary text-sm" data-icon="verified">verified</span>
+            <span class="text-label-md font-label-md uppercase">90-Day Warranty</span>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 md:order-2 h-64 md:h-full min-h-[300px]">
+        <img alt="Technical Workshop"
+          class="w-full h-full object-cover rounded grayscale hover:grayscale-0 transition-all duration-700"
+          data-alt="A macro photograph of a professional technician's workstation focused on the disassembly of a premium hair clipper. The scene features precision tools like screwdrivers and tweezers arranged neatly on a dark technical mat. The lighting is focused and dramatic, highlighting the metallic textures of the clipper's internal motor and gold-finish housing. The color palette is dominated by dark greys and bright metallic golds."
+          src="https://lh3.googleusercontent.com/aida/ADBb0uikRC_WnFFjUPH36JrrBIQKsbYYQ76E1scgzwBeMjasEKS5guR522eusBa4MLH4qJtvHacRZhcHjepcJO57vR_BNQa_r6R93h2iblxyIHYWKHgg4QgLS-8vaQcy0PDErPNMW9SqT3qMb9zS1C9aDRH89Pro50aDHv_zhdtyEocSM3zQNKdwI0kGTf0rJLUDAUms-qX_WWcRRQZP4q0T60RCnqvwDPeKGxJ4OXHWTfMarF24dPqyvW1d5XnoSAW9FikM9e0vk0W6usw" />
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-slate-50 border-t border-slate-200 mt-xl">
+    <div class="max-w-7xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="col-span-1 md:col-span-1">
+        <div class="text-lg font-bold text-slate-900 uppercase mb-6 font-['Space_Grotesk']">
+          STRONGE MACHINE
+        </div>
+        <p class="text-slate-500 font-['Space_Grotesk'] text-sm leading-relaxed">
+          Technical Excellence in Hair Equipment. Bogotá, Colombia. Official BaByliss PRO Partner.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-['Space_Grotesk'] text-sm font-bold uppercase tracking-widest text-slate-900 mb-6">Quick Links
+        </h4>
+        <nav class="flex flex-col gap-4">
+          <a class="text-slate-500 hover:text-slate-800 transition-all font-['Space_Grotesk'] text-sm" href="#">Privacy
+            Policy</a>
+          <a class="text-slate-500 hover:text-slate-800 transition-all font-['Space_Grotesk'] text-sm" href="#">Terms of
+            Service</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="font-['Space_Grotesk'] text-sm font-bold uppercase tracking-widest text-slate-900 mb-6">Support</h4>
+        <nav class="flex flex-col gap-4">
+          <a class="text-slate-900 font-semibold underline font-['Space_Grotesk'] text-sm" href="#">Warranty
+            Information</a>
+          <a class="text-slate-500 hover:text-slate-800 transition-all font-['Space_Grotesk'] text-sm" href="#">Repair
+            Tracking</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="font-['Space_Grotesk'] text-sm font-bold uppercase tracking-widest text-slate-900 mb-6">Newsletter
+        </h4>
+        <div class="flex">
+          <input
+            class="bg-white border border-slate-200 px-4 py-2 w-full focus:ring-1 focus:ring-slate-900 outline-none text-sm"
+            placeholder="Technical updates..." type="email" />
+          <button class="bg-slate-900 text-white px-4 py-2 hover:bg-slate-800 transition-colors">
+            <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200">
+      <p class="text-slate-400 font-['Space_Grotesk'] text-xs text-center">
+        © 2024 STRONGE MACHINE. Technical Excellence in Hair Equipment. Bogotá, Colombia. Official BaByliss PRO Partner.
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

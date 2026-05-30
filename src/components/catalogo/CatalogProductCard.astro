@@ -1,0 +1,81 @@
+---
+/**
+ * Resumen: Tarjeta de producto especializada para el catálogo técnico.
+ * Contenido: Marca, modelo, nombre, tabla de especificaciones y botones de acción.
+ * Interacción: Hover en imagen (escala de grises a color), botones con transiciones.
+ */
+interface Spec {
+  label: string;
+  value: string;
+}
+
+interface Button {
+  text: string;
+  icon?: string;
+  type: 'primary' | 'outline';
+}
+
+interface Props {
+  brand: string;
+  model: string;
+  name: string;
+  imagePath: string;
+  badge?: string;
+  specs: Spec[];
+  buttons: Button[];
+  loading?: "lazy" | "eager";
+}
+
+const { brand, model, name, imagePath, badge, specs, buttons, loading = "lazy" } = Astro.props;
+
+// Construcción de la URL de imagen (soporta URLs completas o relativas a R2)
+const R2_BASE_URL = "https://imagenes.midominio.com"; // Ajustar según config real
+const imageUrl = imagePath.startsWith('http') ? imagePath : `${R2_BASE_URL}/${imagePath}`;
+---
+
+<div class="group bg-surface-container-lowest border border-outline-variant p-1 hover:shadow-sm transition-all flex flex-col h-full">
+  <div class="aspect-[0.85] overflow-hidden bg-white mb-6 relative">
+    <img 
+      class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+      src={imageUrl} 
+      alt={name}
+      loading={loading}
+    />
+    {badge && (
+      <div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 font-label-md text-[10px] uppercase tracking-widest">
+        {badge}
+      </div>
+    )}
+  </div>
+  <div class="px-6 pb-8 flex-grow flex flex-col">
+    <div class="flex justify-between items-start mb-2">
+      <span class="font-label-md text-label-md text-outline uppercase">{brand}</span>
+      <span class="font-label-md text-label-md text-primary font-bold">{model}</span>
+    </div>
+    <h2 class="font-headline-sm text-headline-sm mb-4 uppercase">{name}</h2>
+    
+    <div class="grid grid-cols-2 gap-4 mb-8 text-xs font-label-md uppercase text-on-surface-variant border-y border-outline-variant py-4">
+      {specs.map(spec => (
+        <div class="flex flex-col gap-1">
+          <span class="text-[10px] text-outline">{spec.label}</span>
+          <span>{spec.value}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="flex flex-col gap-3 mt-auto">
+      {buttons.map(button => (
+        button.type === 'primary' ? (
+          <button class="w-full bg-primary text-white py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-primary-container transition-colors flex items-center justify-center gap-2">
+            {button.icon && <span class="material-symbols-outlined text-sm">{button.icon}</span>}
+            {button.text}
+          </button>
+        ) : (
+          <button class="w-full border border-secondary text-secondary py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-surface-container transition-colors">
+            {button.text}
+          </button>
+        )
+      ))}
+    </div>
+  </div>
+</div>

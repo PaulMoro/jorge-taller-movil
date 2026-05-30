@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/home/Hero.astro';
+import PartnerBanner from '../components/home/PartnerBanner.astro';
+import Features from '../components/home/Features.astro';
+import ServiceGrid from '../components/home/ServiceGrid.astro';
+import Testimonials from '../components/home/Testimonials.astro';
+import WhatsAppCommunity from '../components/home/WhatsAppCommunity.astro';
+---
+
+<Layout title="Inicio">
+  <main class="pt-20 overflow-x-hidden">
+    <!-- Seccion Hero: Reconocimiento inicial y propuesta de valor -->
+    <Hero />
+
+    <!-- Banner de Partners: Validacion social con marcas aliadas -->
+    <PartnerBanner />
+
+    <!-- Caracteristicas: 6 pilares de la excelencia tecnica -->
+    <Features />
+
+    <!-- Grilla de Servicios: Especialidades y bento grid -->
+    <ServiceGrid />
+
+    <!-- Voces de la Industria: Testimonios y CTA a soporte -->
+    <Testimonials />
+
+    <!-- Comunidad WhatsApp: Punto de conversion final -->
+    <WhatsAppCommunity />
+  </main>
+</Layout>

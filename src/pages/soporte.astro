@@ -1,0 +1,31 @@
+---
+/**
+ * Propósito de la Página: Formulario de soporte y registro de reparaciones técnicas.
+ * Componentes Utilizados:
+ *   - Layout: Estructura base con Header y Footer.
+ *   - ContactHeader: Encabezado con título y descripción.
+ *   - ServiceTicketForm: Formulario principal de registro.
+ *   - ContactSidebar: Información de contacto, horarios y ubicación.
+ *   - PrecisionMaintenance: Sección informativa inferior.
+ * Estructura: Layout de dos columnas (Formulario + Sidebar) con secciones de ancho completo arriba y abajo.
+ */
+
+import Layout from '../layouts/Layout.astro';
+import ContactHeader from '../components/soporte/ContactHeader.astro';
+import ServiceTicketForm from '../components/soporte/ServiceTicketForm.astro';
+import ContactSidebar from '../components/soporte/ContactSidebar.astro';
+import PrecisionMaintenance from '../components/soporte/PrecisionMaintenance.astro';
+---
+
+<Layout title="Soporte y Reparaciones">
+  <main class="pt-32 pb-xl px-margin max-w-7xl mx-auto">
+    <ContactHeader />
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+      <ServiceTicketForm />
+      <ContactSidebar />
+    </div>
+
+    <PrecisionMaintenance />
+  </main>
+</Layout>

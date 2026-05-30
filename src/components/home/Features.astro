@@ -1,0 +1,32 @@
+---
+/**
+ * SECCIÓN: Features / Pilares
+ * PROPÓSITO: Mostrar los valores agregados y pilares del servicio.
+ * CONTENIDO:
+ *  - Grid de 6 items con iconos de Material Symbols.
+ *  - Textos: Partes Originales, Entrega Express, Soporte Técnico, Garantía Total, Asesoría, Ingeniería.
+ */
+const features = [
+  { icon: 'build', label: 'Partes Originales' },
+  { icon: 'local_shipping', label: 'Entrega Express' },
+  { icon: 'support_agent', label: 'Soporte Técnico' },
+  { icon: 'verified_user', label: 'Garantía Total' },
+  { icon: 'thumb_up', label: 'Asesoría de Calidad' },
+  { icon: 'engineering', label: 'Ingeniería Especializada' }
+];
+---
+
+<section class="bg-white py-10 border-b border-outline-variant/30">
+  <div class="container mx-auto px-8 max-w-7xl">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 items-center justify-items-center">
+      {features.map((feature) => (
+        <div class="flex items-center gap-3 w-full sm:w-auto justify-center md:justify-start">
+          <span class="material-symbols-outlined text-primary text-xl">{feature.icon}</span>
+          <span class="font-label-md text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">
+            {feature.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

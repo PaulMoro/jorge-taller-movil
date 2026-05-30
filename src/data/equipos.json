@@ -1,0 +1,50 @@
+[
+  {
+    "id": "goldfx-clipper",
+    "brand": "BaByliss PRO",
+    "model": "MODEL-X1",
+    "name": "GoldFX Precision Clipper",
+    "category": "Máquinas de Corte",
+    "imagePath": "goldfx-clipper.webp",
+    "badge": "Premium Edition",
+    "specs": [
+      { "label": "Motor", "value": "7200 RPM Brushless" },
+      { "label": "Garantía", "value": "2 Años Técnica" }
+    ],
+    "buttons": [
+      { "text": "Consultar por WhatsApp", "icon": "chat", "type": "primary" },
+      { "text": "Especificaciones Técnicas", "type": "outline" }
+    ]
+  },
+  {
+    "id": "industrial-shaver",
+    "brand": "Stronge Machine",
+    "model": "SM-900",
+    "name": "Industrial Foil Shaver",
+    "category": "Trimmers",
+    "imagePath": "industrial-shaver.webp",
+    "specs": [
+      { "label": "Potencia", "value": "9.5W High Torque" },
+      { "label": "Autonomía", "value": "120 Minutos" }
+    ],
+    "buttons": [
+      { "text": "Consultar Disponibilidad", "icon": "calendar_today", "type": "primary" },
+      { "text": "Manual de Usuario", "type": "outline" }
+    ]
+  },
+  {
+    "id": "steelfx-dryer",
+    "brand": "BaByliss PRO",
+    "model": "STEEL-D",
+    "name": "SteelFX Dryer 2000W",
+    "category": "Secadores Industriales",
+    "imagePath": "steelfx-dryer.webp",
+    "specs": [
+      { "label": "Motor", "value": "Ferrari Designed" },
+      { "label": "Garantía", "value": "3 Años Técnica" }
+    ],
+    "buttons": [
+      { "text": "Consultar Stock", "icon": "shopping_cart", "type": "primary" }
+    ]
+  }
+]

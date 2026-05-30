@@ -1,0 +1,140 @@
+---
+/**
+ * SECCIÓN: Hero / Principal
+ * PROPÓSITO: Impacto visual inicial y propuesta de valor de Jorge Rodriguez.
+ * CONTENIDO:
+ *  - Imagen de fondo (Técnico con Van) con overlay de contraste.
+ *  - Badge de "Official Service Partner".
+ *  - Títulos principales (Headline-lg) con énfasis en marca y "Talento".
+ *  - Párrafo descriptivo (Resumen de 30+ años de experiencia).
+ *  - CTAs: "Agendar Servicio" (WhatsApp) y "Nuestra Tecnología" (Servicios).
+ *  - Tarjeta flotante (30+ Años de Maestría) con animación float.
+ */
+import { SITE_CONFIG, SOCIAL_LINKS } from "../../config/site";
+const { r2BaseUrl } = SITE_CONFIG;
+const heroImage = `${r2BaseUrl}/marketing/jorge-rodriguez.png`;
+const imageWidth = 1600;
+---
+
+<section
+  class="relative min-h-[90vh] w-full overflow-hidden flex items-center bg-background border-b border-outline-variant/10"
+>
+  <!-- Background Layer -->
+  <div class="absolute inset-0 z-0">
+    <!-- Image with precise object-position to prevent head crop on wide screens (1600px+) -->
+    <img
+      alt="Jorge Rodriguez Expert"
+      class="w-full h-full object-cover object-[80%_15%] opacity-90"
+      src={heroImage}
+      width={imageWidth}
+      loading="eager"
+      fetchpriority="high"
+      decoding="sync"
+    />
+
+    <!-- Gradient Overlay: Strong on the left for text, transparent on the right -->
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-background via-background/90 md:via-background/70 to-transparent"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"
+    >
+    </div>
+  </div>
+
+  <!-- Content Container with pt-32 to avoid Header overlap -->
+  <div class="container mx-auto px-8 relative z-10 max-w-7xl pt-32 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Text Column -->
+      <div class="lg:col-span-7 xl:col-span-7">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="w-12 h-[2px] bg-primary"></span>
+          <span
+            class="font-label-md text-primary tracking-widest uppercase font-bold"
+            >Liderazgo en Mantenimiento</span
+          >
+        </div>
+
+        <div class="space-y-6">
+          <h1
+            class="font-headline-lg text-on-background leading-[1.1] tracking-tight text-4xl md:text-6xl"
+          >
+            <span
+              class="block text-primary/80 font-medium text-xl md:text-2xl tracking-[0.1em] mb-4 uppercase"
+              >Jorge Rodriguez</span
+            >
+            INGENIERÍA DE PRECISIÓN <br class="hidden xl:block" /> PARA TU <span
+              class="text-primary italic font-black">TALENTO</span
+            >
+          </h1>
+
+          <!-- Usando max-w-[550px] estricto para evitar el bug de escala de Tailwind -->
+          <p
+            class="text-body-lg text-on-surface-variant max-w-[550px] font-medium leading-relaxed"
+          >
+            Especialistas en restauración técnica y mantenimiento de alto nivel.
+            Elevamos el estándar de tus herramientas para que tú eleves el
+            estándar de tu arte.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-6">
+            <a
+              href={SOCIAL_LINKS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto bg-primary text-on-primary px-8 py-4 font-label-md tracking-wider uppercase flex items-center justify-center gap-3 hover:bg-primary-container transition-all shadow-lg whitespace-nowrap"
+            >
+              Agendar Servicio <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
+            </a>
+
+            <a
+              href="/servicios"
+              class="w-full sm:w-auto border-2 border-outline/30 text-on-surface px-8 py-4 font-label-md tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-surface-container-low transition-all bg-white/50 backdrop-blur-sm whitespace-nowrap"
+            >
+              Nuestra Tecnología
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Card Column -->
+      <div
+        class="hidden lg:flex lg:col-span-5 xl:col-span-5 justify-end mt-12 lg:mt-0 relative"
+      >
+        <div
+          class="bg-white/70 backdrop-blur-md p-8 border border-white/50 shadow-2xl max-w-[320px] animate-float relative z-20"
+        >
+          <div class="text-5xl font-bold text-primary mb-3">30+</div>
+          <div
+            class="text-sm uppercase tracking-widest font-black text-on-background mb-4 leading-tight"
+          >
+            Años de Maestría Técnica en Colombia
+          </div>
+          <p class="text-sm text-on-surface-variant font-medium">
+            Soporte oficial para las herramientas de los mejores artistas del
+            país.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

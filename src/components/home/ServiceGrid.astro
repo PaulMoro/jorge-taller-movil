@@ -1,0 +1,143 @@
+---
+/**
+ * SECCIÓN: Service Grid (Bento)
+ * PROPÓSITO: Catálogo visual de especialidades técnicas.
+ * CONTENIDO:
+ *  - Grid asimétrico (Bento) con 3 servicios principales (Secadores, Planchas, Máquinas).
+ *  - Sección destacada: Afilado Industrial con imagen de precisión.
+ *  - Iconografía: Material Symbols (air, straighten, content_cut).
+ *  - Botones: "Detalles" y "Conocer Proceso".
+ */
+import { SITE_CONFIG } from "../../config/site";
+const { r2BaseUrl } = SITE_CONFIG;
+
+const services = [
+  {
+    id: "secadores",
+    title: "SECADORES",
+    description:
+      "Calibración térmica y limpieza de sistemas de flujo de aire iónico.",
+    icon: "air",
+    bgIcon: "mode_fan",
+    href: "/servicios",
+    features: ["Limpieza de Motores AC/DC", "Reemplazo de Resistencias"],
+    colSpan: "md:col-span-2",
+  },
+  {
+    id: "planchas",
+    title: "PLANCHAS",
+    description: "Restauración de placas de titanio y control termostático.",
+    icon: "straighten",
+    href: "/servicios",
+    colSpan: "md:col-span-1",
+  },
+  {
+    id: "maquinas",
+    title: "MÁQUINAS",
+    description: "Sincronización de cuchillas y balance de motor rotativo.",
+    icon: "content_cut",
+    href: "/servicios",
+    colSpan: "md:col-span-1",
+  },
+];
+---
+
+<section class="py-xl bg-background">
+  <div class="container mx-auto px-8 max-w-7xl py-8">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <h2
+        class="font-headline-md text-on-background mb-4 uppercase tracking-tight"
+      >
+        Ecosistema Técnico
+      </h2>
+      <p class="text-body-md text-on-surface-variant">
+        Soluciones integrales diseñadas para prolongar la vida útil y optimizar
+        el desempeño de cada herramienta en tu estación de trabajo.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      {
+        services.map((service) => (
+          <div
+            class={`${service.colSpan} group bg-surface-container-low p-8 border border-outline-variant hover:border-primary transition-all relative overflow-hidden h-[400px] flex flex-col justify-end`}
+          >
+            <div class="absolute top-8 left-8">
+              <span class="material-symbols-outlined text-4xl text-primary">
+                {service.icon}
+              </span>
+            </div>
+
+            <div class="relative z-10">
+              <h3 class="font-headline-sm mb-2">{service.title}</h3>
+              <p class="text-body-md text-on-surface-variant mb-4">
+                {service.description}
+              </p>
+
+              {service.features && (
+                <ul class="text-label-md space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {service.features.map((f) => (
+                    <li class="flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 bg-primary rounded-full" /> {f}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {service.href ? (
+                <a
+                  href={service.href}
+                  class="text-primary font-label-md flex items-center gap-2 mt-4"
+                >
+                  DETALLES{" "}
+                  <span class="material-symbols-outlined text-sm">add</span>
+                </a>
+              ) : null}
+            </div>
+
+            {service.bgIcon && (
+              <div class="absolute right-[-20px] bottom-[-20px] opacity-10 group-hover:opacity-20 transition-all group-hover:scale-110 duration-500">
+                <span class="material-symbols-outlined text-[180px]">
+                  {service.bgIcon}
+                </span>
+              </div>
+            )}
+          </div>
+        ))
+      }
+
+      <!-- Afilado Especializado (Full Width Row) -->
+      <div
+        class="md:col-span-4 bg-white border border-outline-variant p-8 md:p-12 flex flex-col md:flex-row items-center gap-12"
+      >
+        <div class="md:w-1/2 overflow-hidden">
+          <img
+            alt="Precision sharpening"
+            class="w-full aspect-video md:aspect-square object-cover object-right transition-transform duration-700 hover:scale-105"
+            src={`${r2BaseUrl}/marketing/jorge-rodriguez.png`}
+          />
+        </div>
+        <div class="md:w-1/2">
+          <span
+            class="font-label-md text-primary tracking-widest uppercase mb-4 block font-bold"
+            >Servicio Premium</span
+          >
+          <h3 class="font-headline-md mb-6 leading-tight">
+            AFILADO INDUSTRIAL DE CUCHILLAS
+          </h3>
+          <p class="text-body-lg text-on-surface-variant mb-8 font-medium">
+            Utilizamos tecnología de afilado por láser para garantizar un corte
+            milimétrico. El tratamiento incluye desinfección ultrasónica y
+            lubricación de grado quirúrgico.
+          </p>
+          <a
+            href="/servicios"
+            class="inline-block bg-on-background text-surface px-8 py-4 font-label-md uppercase tracking-wider hover:bg-primary transition-all"
+          >
+            Conocer Proceso
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

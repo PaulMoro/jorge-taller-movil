@@ -1,0 +1,100 @@
+---
+/**
+ * SECCIÓN: Testimonios
+ * PROPÓSITO: Prueba social mediante reseñas de clientes reales.
+ * CONTENIDO:
+ *  - Listado de testimonios (Data: src/data/testimonials.ts).
+ *  - Tarjetas con: Estrellas (Rating), Texto de reseña, Autor con imagen y cargo.
+ *  - Tarjeta de CTA: "Atención Directa" para redirigir a WhatsApp.
+ */
+import { testimonials } from "../../data/testimonials";
+import { SOCIAL_LINKS } from "../../config/site";
+---
+
+<section class="bg-surface-container py-xl">
+  <div class="container mx-auto px-8 max-w-7xl py-8">
+    <div
+      class="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-6"
+    >
+      <div>
+        <h2 class="font-headline-md mb-2 uppercase tracking-tight">
+          Voces de la Industria
+        </h2>
+        <p class="text-body-md text-on-surface-variant">
+          Lo que los maestros del estilo dicen sobre nuestro soporte técnico.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        testimonials.map((t) => (
+          <div class="bg-white p-10 border border-outline-variant flex flex-col justify-between hover:shadow-lg transition-shadow">
+            <div>
+              <div class="flex gap-1 mb-6 text-primary">
+                {[...Array(5)].map(() => (
+                  <span class="material-symbols-outlined" data-weight="fill">
+                    star
+                  </span>
+                ))}
+              </div>
+              <p class="text-body-lg italic mb-8">"{t.comment}"</p>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 overflow-hidden rounded-full border-2 border-outline-variant">
+                  <img
+                    alt={t.name}
+                    class="w-full h-full object-cover"
+                    src={t.image}
+                  />
+                </div>
+                <div>
+                  <h4 class="font-label-md">{t.name}</h4>
+                  <p class="text-[12px] text-on-surface-variant uppercase tracking-tighter">
+                    {t.role}
+                  </p>
+                </div>
+              </div>
+
+              {t.link && (
+                <a
+                  href={t.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary hover:scale-110 transition-transform"
+                >
+                  <span class="material-symbols-outlined">open_in_new</span>
+                </a>
+              )}
+            </div>
+          </div>
+        ))
+      }
+
+      <!-- CTA Card: WhatsApp Chat -->
+      <div
+        class="bg-primary text-on-primary p-10 flex flex-col justify-between shadow-xl shadow-primary/20 hover:-translate-y-1 transition-all"
+      >
+        <h3 class="font-headline-sm uppercase tracking-tight">
+          Atención Directa
+        </h3>
+        <p class="opacity-90 font-medium">
+          ¿Tienes una duda técnica urgente? Habla directamente con Jorge
+          Rodriguez para una asesoría personalizada.
+        </p>
+        <a
+          href={SOCIAL_LINKS.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-b-2 border-white pb-2 font-label-md w-fit uppercase hover:translate-x-2 transition-transform mt-6 flex items-center gap-2"
+        >
+          Chat con Técnico <span class="material-symbols-outlined text-sm"
+            >chat</span
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

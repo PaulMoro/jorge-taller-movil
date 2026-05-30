@@ -1,0 +1,120 @@
+---
+import { NAV_LINKS, SOCIAL_LINKS, SITE_CONFIG } from '../config/site';
+import equipos from '../data/equipos.json';
+const currentPath = Astro.url.pathname;
+const { r2BaseUrl } = SITE_CONFIG;
+---
+
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
+    <div class="text-xl font-bold tracking-tighter text-slate-900 uppercase font-['Space_Grotesk'] antialiased tracking-tight">
+      {SITE_CONFIG.name}
+    </div>
+    
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center space-x-8">
+      {NAV_LINKS.map((link) => (
+        <a 
+          class={`transition-colors font-['Space_Grotesk'] text-sm uppercase tracking-wider ${currentPath === link.href || (currentPath === '/' && link.href === '/') ? 'text-slate-900 font-bold border-b-2 border-slate-900 pb-1' : 'text-slate-500 hover:text-slate-900'}`} 
+          href={link.href}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a 
+        href={SOCIAL_LINKS.whatsapp} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="hidden sm:block bg-primary text-white px-6 py-2 text-label-md font-label-md uppercase tracking-widest hover:brightness-110 transition-all scale-98 active:opacity-90"
+      >
+        Solicitar Técnico
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <button 
+        id="menu-toggle"
+        class="flex md:hidden material-symbols-outlined p-2 text-slate-900 hover:bg-slate-100 transition-colors items-center justify-center"
+        aria-label="Menu"
+      >
+        menu
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div 
+    id="mobile-menu" 
+    class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-200 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)] flex-col"
+  >
+    <div class="p-8 space-y-10">
+      <!-- Nav Links -->
+      <nav class="flex flex-col space-y-6">
+        {NAV_LINKS.map((link) => (
+          <a 
+            class={`text-lg font-['Space_Grotesk'] uppercase tracking-widest ${currentPath === link.href || (currentPath === '/' && link.href === '/') ? 'text-primary font-bold' : 'text-slate-600'}`} 
+            href={link.href}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="h-px bg-slate-100 w-full"></div>
+
+      <!-- Featured Products -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-6">Equipos Destacados</h3>
+        <div class="grid grid-cols-1 gap-6">
+          {equipos.slice(0, 2).map((item) => (
+            <div class="flex items-center gap-4 group">
+              <div class="w-16 h-16 bg-slate-50 p-2 border border-slate-100 overflow-hidden rounded-sm">
+                <img 
+                  src={`${r2BaseUrl}/marketing/${item.imagePath}`} 
+                  alt={item.name}
+                  class="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                />
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-wider text-primary font-bold">{item.brand}</p>
+                <h4 class="text-sm font-bold text-slate-900 uppercase leading-tight">{item.name}</h4>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <a 
+        href={SOCIAL_LINKS.whatsapp} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="block text-center bg-primary text-white py-4 text-label-md font-label-md uppercase tracking-widest"
+      >
+        Solicitar Técnico
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        menuToggle.textContent = 'close';
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        menuToggle.textContent = 'menu';
+      }
+    });
+  }
+</script>
+

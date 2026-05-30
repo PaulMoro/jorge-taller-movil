@@ -1,0 +1,36 @@
+---
+/**
+ * PÁGINA: Servicios Técnicos
+ * PROPÓSITO: Detallar la oferta de mantenimiento, reparación y protocolos de Jorge Rodriguez.
+ * COMPONENTES:
+ *  - Layout: Estructura global con Header y Footer.
+ *  - ServiciosHero: Introducción visual y conceptual.
+ *  - ServicesBento: Catálogo detallado de especialidades técnicas.
+ *  - TechnicalProcess: Explicación del flujo de trabajo (Protocolo).
+ *  - CTASection: Conversión final para agendamiento.
+ * ESTRUCTURA:
+ *  - Envuelto en Layout.astro con el título "Servicios Técnicos".
+ *  - main con padding-top para compensar el header fijo.
+ */
+import Layout from '../layouts/Layout.astro';
+import ServiciosHero from '../components/servicios/ServiciosHero.astro';
+import ServicesBento from '../components/servicios/ServicesBento.astro';
+import TechnicalProcess from '../components/servicios/TechnicalProcess.astro';
+import CTASection from '../components/servicios/CTASection.astro';
+---
+
+<Layout title="Servicios Técnicos">
+  <main class="pt-20">
+    <!-- Hero Section: Reconocimiento del expertise y minimalismo -->
+    <ServiciosHero />
+
+    <!-- Bento Grid: Desglose de servicios especializados -->
+    <ServicesBento />
+
+    <!-- Protocolo Técnico: Paso a paso del proceso de restauración -->
+    <TechnicalProcess />
+
+    <!-- CTA Final: Conversión y agendamiento -->
+    <CTASection />
+  </main>
+</Layout>
