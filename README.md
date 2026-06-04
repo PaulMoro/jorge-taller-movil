@@ -8,17 +8,19 @@ Este proyecto es la presencia digital de Jorge Rodriguez, un laboratorio de inge
 - Agendar mantenimientos preventivos y reparaciones técnicas.
 - Explorar un catálogo curado de herramientas profesionales.
 - Conocer protocolos de servicio especializados y el uso de repuestos originales.
+- Consultar las políticas y garantías legales del servicio.
 
 ## 🛠️ Estado Actual
 
 El proyecto ha completado su migración base a **Astro**. Anteriormente contábamos con maquetas funcionales en HTML puro.
-Las páginas migradas son:
+Las páginas migradas y creadas son:
 - `index.html` -> `src/pages/index.astro`: **FINALIZADA** (Landing page).
 - `servicio.html` -> `src/pages/servicios.astro`: **FINALIZADA** (Gestión de servicios).
 - `catalogo.html` -> `src/pages/catalogo.astro`: **FINALIZADA** (Catálogo premium).
-- `contacto.html` -> `src/pages/soporte.astro`: **FINALIZADA** (Soporte técnico).
+- `contacto.html` -> `src/pages/contacto.astro`: **FINALIZADA** (Soporte técnico y contacto).
+- Páginas Legales -> `src/pages/politicas/`: **FINALIZADAS** (Privacidad, Garantía de Productos, y Garantía de Servicio).
 
-## 🌟 Objetivos de la Migración a Astro
+## 🌟 Objetivos de la Arquitectura Astro
 
 El objetivo principal es transformar las vistas estáticas en una aplicación web moderna y espectacular. Esto nos permite:
 - **Componentización:** Estructura modular con componentes reutilizables (`.astro`).
@@ -38,7 +40,7 @@ El proyecto utiliza un sistema de diseño basado en **Material Design 3** con un
 ### 🧩 Componentes y Extensiones
 - **Superficies:** Los componentes utilizan capas de color como `bg-surface-container-lowest` para elevar elementos sobre el `bg-background`.
 - **Bordes:** Uso sistemático de `border border-outline-variant` para delimitar módulos con precisión técnica.
-- **Efectos:** Micro-animaciones de escala (`active:scale-95`) y transiciones de color/escala de grises (`duration-700`) para una experiencia viva.
+- **Efectos:** Micro-animaciones de escala (`active:scale-95`) y transiciones de color/escala de grises (`duration-700`) para una experiencia viva, adaptadas tanto para Desktop como para Mobile.
 
 ### 🔘 Botones (Buttons)
 Existen tres estilos principales de botones:
@@ -54,9 +56,9 @@ Existen tres estilos principales de botones:
 ## 🚀 Metodología y Flujo de Trabajo
 
 ### 🛠️ Creación de Servicios y Soporte
-La migración de las páginas de **Servicios** y **Soporte** se realizó bajo un esquema de **Componentización Extrema**:
+La migración de las páginas de **Servicios** y **Contacto** se realizó bajo un esquema de **Componentización Extrema**:
 1. **Análisis de Maqueta:** Identificación de patrones visuales y bloques funcionales en el HTML original.
-2. **Extracción de Módulos:** División en componentes atómicos dentro de `src/components/servicios/` y `src/components/soporte/`.
+2. **Extracción de Módulos:** División en componentes atómicos dentro de sus respectivos directorios.
 3. **Ensamblaje Semántico:** Reconstrucción de la página en el directorio `src/pages/` inyectando los componentes en el `Layout.astro` global para heredar el Header y Footer del sistema.
 4. **Documentación Obligatoria:** Cada página y componente incluye un bloque de comentarios detallando su propósito, contenido e interacción.
 
@@ -64,26 +66,28 @@ La migración de las páginas de **Servicios** y **Soporte** se realizó bajo un
 
 ### 📱 Header y Navegación Inteligente
 El `Header.astro` ha sido rediseñado para ofrecer una experiencia híbrida:
-- **Desktop:** Navegación limpia con eliminación del buscador innecesario para priorizar los CTAs de servicio.
-- **Mobile Dropdown:** Implementación de un menú lateral/desplegable interactivo que incluye:
-  - Enlaces de navegación con estados activos.
-  - **Equipos Destacados:** Sección integrada que muestra productos dinámicos de `equipos.json`, permitiendo al usuario explorar el catálogo sin salir de la navegación principal.
-  - **Vanilla Interactivity:** Lógica de toggle optimizada sin dependencias externas pesadas.
+- **Desktop:** Navegación limpia con eliminación del buscador innecesario para priorizar los CTAs de servicio y redirección de logotipo hacia el inicio.
+- **Mobile Dropdown:** Implementación de un menú lateral interactivo que incluye enlaces de navegación, equipos destacados y lógica de toggle sin dependencias pesadas.
 
 ### 🖼️ Arquitectura de Activos (Imágenes)
 Para mantener un repositorio ligero y profesional, las imágenes se alojan externamente en **Cloudflare R2**.
 - **Configuración Global:** La URL base se gestiona en `src/config/site.ts` (`SITE_CONFIG.r2BaseUrl`).
-- **Inyección Dinámica:** Migración de URLs estáticas a plantillas literales (`${r2BaseUrl}/...`) en componentes clave como `Hero`, `PartnerBanner` y `ServiceGrid`.
-- **Control de Aspecto:** Estandarización de logos de marcas aliadas con `w-auto` y `h-16` para asegurar que las proporciones industriales se mantengan intactas.
+- **Inyección Dinámica:** Migración de URLs estáticas a plantillas literales (`${r2BaseUrl}/...`) en componentes clave.
+- **Control de Aspecto:** Estandarización de logos de marcas aliadas y ajuste del tamaño e interacciones específicamente adaptadas a pantallas móviles.
+
+### ⚖️ Gestión de Aspectos Legales
+Se creó la arquitectura y redacción de las páginas de políticas requeridas por ley en Colombia: Tratamiento de Datos Personales, Garantía de Productos, y Garantía de Servicio (Mano de Obra). Se integraron los datos dinámicos extraídos de la configuración del proyecto.
 
 ## 🔜 Próximos Pasos / Tareas Pendientes
 
 ### 🟢 Completado
-- [x] **Migración Total de Páginas:** Todas las vistas principales están operativas en Astro.
+- [x] **Migración Total de Páginas:** Todas las vistas principales están operativas en Astro (Inicio, Servicios, Catálogo, Contacto).
+- [x] **Páginas Legales:** Estructura e implementación de políticas legales integradas al Footer.
 - [x] **Integración con R2:** Imágenes servidas con optimización técnica y URLs dinámicas.
-- [x] **Menú Móvil Interactivo:** Navegación optimizada para dispositivos táctiles con preview de productos.
-- [x] **Refactorización de Footer:** Organización de enlaces en políticas de servicio y accesos rápidos.
+- [x] **Menú Móvil Interactivo:** Navegación optimizada para dispositivos táctiles.
+- [x] **Refactorización de Contacto:** Transición exitosa del apartado "soporte" a "contacto" con actualización en los enlaces del proyecto.
+- [x] **Comunidad de WhatsApp:** Integración del canal oficial de WhatsApp de Don Jorge.
 
 ### 🟡 Prioridad Media
 - [ ] **Content Collections para Catálogo:** Implementar gestión mediante archivos Markdown para mayor escalabilidad.
-- [ ] **Flujo de WhatsApp:** Configuración final del envío de datos desde el formulario de soporte.
+- [ ] **Flujo de WhatsApp:** Configuración final del envío de datos desde los formularios interactivos hacia WhatsApp directamente.

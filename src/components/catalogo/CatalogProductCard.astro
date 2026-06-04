@@ -1,4 +1,6 @@
 ---
+import { SITE_CONFIG } from "../../config/site";
+
 /**
  * Resumen: Tarjeta de producto especializada para el catálogo técnico.
  * Contenido: Marca, modelo, nombre, tabla de especificaciones y botones de acción.
@@ -29,8 +31,7 @@ interface Props {
 const { brand, model, name, imagePath, badge, specs, buttons, loading = "lazy" } = Astro.props;
 
 // Construcción de la URL de imagen (soporta URLs completas o relativas a R2)
-const R2_BASE_URL = "https://imagenes.midominio.com"; // Ajustar según config real
-const imageUrl = imagePath.startsWith('http') ? imagePath : `${R2_BASE_URL}/${imagePath}`;
+const imageUrl = imagePath.startsWith('http') ? imagePath : `${SITE_CONFIG.r2BaseUrl}/marketing/${imagePath}`;
 ---
 
 <div class="group bg-surface-container-lowest border border-outline-variant p-1 hover:shadow-sm transition-all flex flex-col h-full">
@@ -71,7 +72,7 @@ const imageUrl = imagePath.startsWith('http') ? imagePath : `${R2_BASE_URL}/${im
             {button.text}
           </button>
         ) : (
-          <button class="w-full border border-secondary text-secondary py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-surface-container transition-colors">
+          <button class="w-full border border-primary text-primary py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-primary-container/10 transition-colors">
             {button.text}
           </button>
         )

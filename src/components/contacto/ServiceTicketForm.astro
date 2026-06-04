@@ -1,0 +1,90 @@
+---
+/**
+ * Resumen: Formulario de registro para tickets de servicio técnico.
+ * Contenido: Campos para nombre, teléfono, modelo de equipo, tipo de servicio y descripción del problema.
+ * Interacción: Inputs y selects con bordes suaves, focus ring y colores oficiales del proyecto.
+ */
+---
+<div class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant p-j-lg md:p-j-xl shadow-sm rounded">
+  <div class="mb-j-lg border-b border-outline-variant pb-j-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-3">
+      <span class="material-symbols-outlined text-primary">assignment</span>
+      Ticket de Servicio
+    </h2>
+    <span class="text-label-md font-label-md bg-surface-container-highest px-3 py-1.5 rounded text-on-surface-variant flex items-center gap-2">
+      <span class="w-2 h-2 rounded bg-primary animate-pulse"></span>
+      FLUJO DE TRABAJO SERIALIZADO
+    </span>
+  </div>
+  
+  <form class="space-y-j-lg">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-j-lg">
+      <div class="flex flex-col gap-2 group">
+        <label class="font-label-md text-label-md text-on-surface-variant uppercase group-focus-within:text-primary transition-colors">Nombre Completo del Propietario</label>
+        <input
+          class="bg-surface-container-low border border-outline px-4 py-3.5 focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-all text-body-md rounded outline-none hover:border-outline-variant"
+          placeholder="ej. Julián Martínez" type="text" />
+      </div>
+      <div class="flex flex-col gap-2 group">
+        <label class="font-label-md text-label-md text-on-surface-variant uppercase group-focus-within:text-primary transition-colors">Teléfono de Contacto</label>
+        <input
+          class="bg-surface-container-low border border-outline px-4 py-3.5 focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-all text-body-md rounded outline-none hover:border-outline-variant"
+          placeholder="+57 300 000 0000" type="tel" />
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-j-lg">
+      <div class="flex flex-col gap-2 group">
+        <label class="font-label-md text-label-md text-on-surface-variant uppercase group-focus-within:text-primary transition-colors">Modelo de Equipo</label>
+        <div class="relative">
+          <select
+            class="w-full appearance-none bg-surface-container-low border border-outline px-4 py-3.5 focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-all text-body-md rounded outline-none hover:border-outline-variant text-on-surface">
+            <option>GoldFX Clipper</option>
+            <option>SilverFX Trimmer</option>
+            <option>RoseFX Dryer</option>
+            <option>Lo-Pro FX Series</option>
+            <option>Otro BaByliss PRO</option>
+          </select>
+          <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none">expand_more</span>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2 group">
+        <label class="font-label-md text-label-md text-on-surface-variant uppercase group-focus-within:text-primary transition-colors">Tipo de Servicio</label>
+        <div class="relative">
+          <select
+            class="w-full appearance-none bg-surface-container-low border border-outline px-4 py-3.5 focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-all text-body-md rounded outline-none hover:border-outline-variant text-on-surface">
+            <option>Alineación de Cuchillas</option>
+            <option>Reemplazo de Motor</option>
+            <option>Optimización de Batería</option>
+            <option>Limpieza y Calibración General</option>
+            <option>Reclamo de Garantía</option>
+          </select>
+          <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none">expand_more</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex flex-col gap-2 group">
+      <label class="font-label-md text-label-md text-on-surface-variant uppercase group-focus-within:text-primary transition-colors">Descripción del Problema</label>
+      <textarea
+        class="bg-surface-container-low border border-outline px-4 py-3.5 focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-all text-body-md rounded outline-none hover:border-outline-variant resize-y min-h-[120px]"
+        placeholder="Describe la falla técnica en detalle..." rows="4"></textarea>
+    </div>
+    
+    <div class="pt-j-md border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <div class="relative flex items-center">
+          <input class="peer appearance-none w-5 h-5 border-2 border-outline rounded focus:ring-2 focus:ring-primary/30 focus:border-primary checked:bg-primary checked:border-primary transition-all cursor-pointer" id="terms" type="checkbox" />
+          <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 material-symbols-outlined text-on-primary text-[16px] pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+        </div>
+        <label class="text-body-md text-on-surface-variant cursor-pointer hover:text-on-surface transition-colors select-none" for="terms">Acepto los términos y condiciones de reparación.</label>
+      </div>
+      <button
+        class="w-full md:w-auto bg-primary text-on-primary px-8 py-4 font-label-md text-label-md rounded uppercase tracking-widest transition-all active:scale-95 hover:bg-primary-container shadow-sm flex items-center justify-center gap-2"
+        type="submit">
+        Enviar Registro
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </button>
+    </div>
+  </form>
+</div>

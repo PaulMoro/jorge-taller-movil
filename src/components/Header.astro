@@ -2,20 +2,25 @@
 import { NAV_LINKS, SOCIAL_LINKS, SITE_CONFIG } from '../config/site';
 import equipos from '../data/equipos.json';
 const currentPath = Astro.url.pathname;
+const normalizedPath = currentPath.replace(/\/$/, "") || "/";
+const isLinkActive = (href: string) => {
+  const normalizedHref = href.replace(/\/$/, "") || "/";
+  return normalizedPath === normalizedHref;
+};
 const { r2BaseUrl } = SITE_CONFIG;
 ---
 
-<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-outline-variant/30">
   <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
-    <div class="text-xl font-bold tracking-tighter text-slate-900 uppercase font-['Space_Grotesk'] antialiased tracking-tight">
+    <a href="/" class="text-xl font-bold tracking-tighter text-on-background uppercase font-['Space_Grotesk'] antialiased tracking-tight hover:text-primary transition-colors">
       {SITE_CONFIG.name}
-    </div>
+    </a>
     
     <!-- Desktop Nav -->
     <nav class="hidden md:flex items-center space-x-8">
       {NAV_LINKS.map((link) => (
         <a 
-          class={`transition-colors font-['Space_Grotesk'] text-sm uppercase tracking-wider ${currentPath === link.href || (currentPath === '/' && link.href === '/') ? 'text-slate-900 font-bold border-b-2 border-slate-900 pb-1' : 'text-slate-500 hover:text-slate-900'}`} 
+          class={`transition-colors font-['Space_Grotesk'] text-sm uppercase tracking-wider ${isLinkActive(link.href) ? 'text-on-background font-bold border-b-2 border-on-background pb-1' : 'text-on-surface-variant hover:text-primary'}`} 
           href={link.href}
         >
           {link.label}
@@ -36,7 +41,7 @@ const { r2BaseUrl } = SITE_CONFIG;
       <!-- Mobile Menu Toggle -->
       <button 
         id="menu-toggle"
-        class="flex md:hidden material-symbols-outlined p-2 text-slate-900 hover:bg-slate-100 transition-colors items-center justify-center"
+        class="flex md:!hidden material-symbols-outlined p-2 text-on-background hover:bg-surface-container-low transition-colors items-center justify-center"
         aria-label="Menu"
       >
         menu
@@ -47,14 +52,14 @@ const { r2BaseUrl } = SITE_CONFIG;
   <!-- Mobile Menu Dropdown -->
   <div 
     id="mobile-menu" 
-    class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-200 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)] flex-col"
+    class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-outline-variant/30 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)] flex-col"
   >
     <div class="p-8 space-y-10">
       <!-- Nav Links -->
       <nav class="flex flex-col space-y-6">
         {NAV_LINKS.map((link) => (
           <a 
-            class={`text-lg font-['Space_Grotesk'] uppercase tracking-widest ${currentPath === link.href || (currentPath === '/' && link.href === '/') ? 'text-primary font-bold' : 'text-slate-600'}`} 
+            class={`text-lg font-['Space_Grotesk'] uppercase tracking-widest ${isLinkActive(link.href) ? 'text-primary font-bold' : 'text-on-surface-variant'}`} 
             href={link.href}
           >
             {link.label}
@@ -62,15 +67,15 @@ const { r2BaseUrl } = SITE_CONFIG;
         ))}
       </nav>
 
-      <div class="h-px bg-slate-100 w-full"></div>
+      <div class="h-px bg-outline-variant/30 w-full"></div>
 
       <!-- Featured Products -->
       <div>
-        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-6">Equipos Destacados</h3>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-outline mb-6">Equipos Destacados</h3>
         <div class="grid grid-cols-1 gap-6">
           {equipos.slice(0, 2).map((item) => (
             <div class="flex items-center gap-4 group">
-              <div class="w-16 h-16 bg-slate-50 p-2 border border-slate-100 overflow-hidden rounded-sm">
+              <div class="w-16 h-16 bg-surface-container-lowest p-2 border border-outline-variant/50 overflow-hidden rounded-sm">
                 <img 
                   src={`${r2BaseUrl}/marketing/${item.imagePath}`} 
                   alt={item.name}
@@ -79,7 +84,7 @@ const { r2BaseUrl } = SITE_CONFIG;
               </div>
               <div>
                 <p class="text-[10px] uppercase tracking-wider text-primary font-bold">{item.brand}</p>
-                <h4 class="text-sm font-bold text-slate-900 uppercase leading-tight">{item.name}</h4>
+                <h4 class="text-sm font-bold text-on-background uppercase leading-tight">{item.name}</h4>
               </div>
             </div>
           ))}

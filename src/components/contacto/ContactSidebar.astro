@@ -1,0 +1,99 @@
+---
+/**
+ * Resumen: Barra lateral con información de contacto y disponibilidad.
+ * Contenido: Disponibilidad en tiempo real, horarios de atención, ubicación con mapa y redes sociales.
+ * Interacción: Alineado a paleta oficial (Material Design 3), hover interactivo en enlaces y mapa.
+ */
+import { SOCIAL_LINKS, SITE_CONFIG } from '../../config/site';
+---
+<aside class="lg:col-span-4 space-y-j-lg">
+  
+  <!-- Status & Availability -->
+  <div class="bg-surface-container-lowest border border-outline-variant p-j-lg rounded shadow-sm">
+    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-j-md">Disponibilidad en Tiempo Real</h3>
+    <div class="space-y-j-sm">
+      <div class="flex items-center justify-between border-b border-outline-variant pb-j-xs">
+        <div class="flex items-center gap-3">
+          <div class="bg-primary-container/20 p-2 rounded flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[20px]">engineering</span>
+          </div>
+          <span class="text-body-md font-medium text-on-surface">Técnicos en Línea</span>
+        </div>
+        <span class="font-label-md text-label-md px-2 py-1 bg-green-100 text-green-800 rounded">6 ACTIVOS</span>
+      </div>
+      <div class="flex items-center justify-between border-b border-outline-variant pb-j-xs">
+        <div class="flex items-center gap-3">
+          <div class="bg-primary-container/20 p-2 rounded flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[20px]">schedule</span>
+          </div>
+          <span class="text-body-md font-medium text-on-surface">Tiempo de Espera</span>
+        </div>
+        <span class="text-body-md text-on-surface-variant">~45 min</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="bg-primary-container/20 p-2 rounded flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[20px]">event_available</span>
+          </div>
+          <span class="text-body-md font-medium text-on-surface">Próximo Turno</span>
+        </div>
+        <span class="text-body-md text-on-surface-variant">Hoy, 2:30 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Business Hours Card -->
+  <div class="bg-tertiary-fixed text-on-tertiary-fixed p-j-lg border border-outline-variant rounded">
+    <h3 class="font-headline-sm text-headline-sm mb-j-md flex items-center gap-2">
+      <span class="material-symbols-outlined">storefront</span>
+      Horarios de Atención
+    </h3>
+    <ul class="space-y-j-xs text-body-md">
+      <li class="flex justify-between border-b border-on-tertiary-fixed/10 pb-2">
+        <span>Lunes - Viernes</span> 
+        <span>08:00 - 18:00</span>
+      </li>
+      <li class="flex justify-between border-b border-on-tertiary-fixed/10 pb-2">
+        <span>Sábado</span> 
+        <span>09:00 - 14:00</span>
+      </li>
+      <li class="flex justify-between font-bold text-primary pt-1">
+        <span>Domingo</span> 
+        <span>CERRADO</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Location Canvas -->
+  <div class="bg-surface-container-highest border border-outline-variant overflow-hidden rounded">
+    <div class="h-48 relative overflow-hidden group cursor-pointer">
+      <img alt="Location Map"
+        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
+        src="https://lh3.googleusercontent.com/aida/ADBb0ug26pimlYuVWW2uo-YQjPrhV5BqDljrMXNK7Zrv08gVvLuFGiHmbuyzw1VpnVs-M9l1j8rbHLOeMMC6thsFSmOWTzAVfwq_2qg5Dn87qIRhMGTFw8XUA6h47fyiYPvjlP5-WgTtTgO0MkzaQBe2S3Ex62B7niad1eOkffxMwbb85SnQfG3pmxo3WY5S3W4YqaNwKDHYqdzFk4kW_vf8sXMy8LX4rZHctnket40zUP2RAnACU5oP3UNIRC0eRydTXeWg1yJmYNbta10" />
+      <div class="absolute inset-0 bg-primary/10 flex items-center justify-center pointer-events-none group-hover:bg-transparent transition-colors">
+        <span class="material-symbols-outlined text-on-primary text-5xl drop-shadow-md group-hover:-translate-y-1 transition-transform" style="font-variation-settings: 'FILL' 1;">location_on</span>
+      </div>
+    </div>
+    <div class="p-j-md bg-surface-container-lowest border-t border-outline-variant">
+      <p class="font-label-md text-label-md text-on-surface uppercase mb-1">Sede Principal</p>
+      <p class="text-body-md text-on-surface-variant">{SITE_CONFIG.address}</p>
+      <div class="mt-j-sm flex gap-4">
+        <a class="text-primary flex items-center gap-2 hover:underline hover:text-primary-container transition-colors font-label-md text-label-md" href="#">
+          <span class="material-symbols-outlined text-sm">directions</span> CÓMO LLEGAR
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social & Contact -->
+  <div class="flex justify-between items-center p-j-md border border-outline-variant rounded bg-surface-container-lowest shadow-sm">
+    <div class="flex gap-4">
+      <a class="material-symbols-outlined text-on-surface hover:text-primary transition-colors p-2 rounded hover:bg-primary-container/10" href={SOCIAL_LINKS.whatsapp} target="_blank">phone_in_talk</a>
+      <a class="material-symbols-outlined text-on-surface hover:text-primary transition-colors p-2 rounded hover:bg-primary-container/10" href={`mailto:contacto@jorgerodriguez.com`}>mail</a>
+    </div>
+    <div class="flex gap-4">
+      <a class="text-on-surface hover:text-primary transition-all font-bold tracking-tighter text-sm" target="_blank" href={SOCIAL_LINKS.instagram}>INSTAGRAM</a>
+      <a class="text-on-surface hover:text-primary transition-all font-bold tracking-tighter text-sm" target="_blank" href={SOCIAL_LINKS.linkedin}>LINKEDIN</a>
+    </div>
+  </div>
+</aside>
