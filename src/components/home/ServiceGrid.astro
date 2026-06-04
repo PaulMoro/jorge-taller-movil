@@ -14,30 +14,47 @@ const { r2BaseUrl } = SITE_CONFIG;
 const services = [
   {
     id: "secadores",
-    title: "SECADORES",
+    title: "MANTENIMIENTO DE SECADORES",
     description:
-      "Calibración térmica y limpieza de sistemas de flujo de aire iónico.",
+      "Reparación y limpieza profunda. ¿Perdió potencia, hace ruidos extraños o ya no calienta?",
     icon: "air",
     bgIcon: "mode_fan",
     href: "/servicios",
-    features: ["Limpieza de Motores AC/DC", "Reemplazo de Resistencias"],
-    colSpan: "md:col-span-2",
+    colSpan: "md:col-span-1",
+    features: [
+      "Desarmado técnico y diagnóstico.",
+      "Limpieza de cabello y químicos.",
+      "Reparación de motor y escobillas.",
+      "Control de temperatura.",
+    ],
   },
   {
     id: "planchas",
-    title: "PLANCHAS",
-    description: "Restauración de placas de titanio y control termostático.",
+    title: "AJUSTE DE PLANCHAS",
+    description:
+      "Reparación y control térmico. ¿No enciende, no calienta parejo o maltrata el cabello?",
     icon: "straighten",
     href: "/servicios",
     colSpan: "md:col-span-1",
+    features: [
+      "Diagnóstico y control térmico.",
+      "Cambio de cables y tarjetas originales.",
+      "Ajuste y alineación de placas.",
+    ],
   },
   {
     id: "maquinas",
-    title: "MÁQUINAS",
-    description: "Sincronización de cuchillas y balance de motor rotativo.",
+    title: "MÁQUINAS Y TIJERAS",
+    description:
+      "Afilado y puesta a punto. ¿Da tirones al cortar, se calienta rápido o vibra demasiado?",
     icon: "content_cut",
     href: "/servicios",
     colSpan: "md:col-span-1",
+    features: [
+      "Afilado profesional con maquinaria de alta precisión.",
+      "Calibración del motor y potencia.",
+      "Alineación exacta de cuchillas seguro y sin tirones.",
+    ],
   },
 ];
 ---
@@ -48,7 +65,7 @@ const services = [
       <h2
         class="font-headline-md text-on-background mb-4 uppercase tracking-tight"
       >
-        Ecosistema Técnico
+        Nuestro Servicio Técnico
       </h2>
       <p class="text-body-md text-on-surface-variant">
         Soluciones integrales diseñadas para prolongar la vida útil y optimizar
@@ -56,11 +73,11 @@ const services = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       {
         services.map((service) => (
           <div
-            class={`${service.colSpan} group bg-surface-container-low p-8 border border-outline-variant hover:border-primary transition-all relative overflow-hidden h-[400px] flex flex-col justify-end`}
+            class={`${service.colSpan} group bg-surface-container-low p-8 border border-outline-variant hover:border-primary transition-all relative overflow-hidden min-h-[400px] md:h-[400px] flex flex-col justify-start`}
           >
             <div class="absolute top-8 left-8">
               <span class="material-symbols-outlined text-4xl text-primary">
@@ -68,21 +85,23 @@ const services = [
               </span>
             </div>
 
-            <div class="relative z-10">
-              <h3 class="font-headline-sm mb-2">{service.title}</h3>
-              <p class="text-body-md text-on-surface-variant mb-4">
-                {service.description}
-              </p>
+            <div class="relative z-10 pt-12 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="font-headline-sm mb-2">{service.title}</h3>
+                <p class="text-body-md text-on-surface-variant mb-4">
+                  {service.description}
+                </p>
 
-              {service.features && (
-                <ul class="text-label-md space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {service.features.map((f) => (
-                    <li class="flex items-center gap-2">
-                      <span class="w-1.5 h-1.5 bg-primary rounded-full" /> {f}
-                    </li>
-                  ))}
-                </ul>
-              )}
+                {service.features && (
+                  <ul class="text-label-md space-y-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                    {service.features.map((f) => (
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 bg-primary rounded-full" /> {f}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
 
               {service.href ? (
                 <a
@@ -108,7 +127,7 @@ const services = [
 
       <!-- Afilado Especializado (Full Width Row) -->
       <div
-        class="md:col-span-4 bg-white border border-outline-variant p-8 md:p-12 flex flex-col md:flex-row items-center gap-12"
+        class="md:col-span-3 bg-white border border-outline-variant p-8 md:p-12 flex flex-col md:flex-row items-center gap-12"
       >
         <div class="md:w-1/2 overflow-hidden">
           <img
@@ -120,21 +139,25 @@ const services = [
         <div class="md:w-1/2">
           <span
             class="font-label-md text-primary tracking-widest uppercase mb-4 block font-bold"
-            >Servicio Premium</span
+            >TALLER MÓVIL A DOMICILIO</span
           >
           <h3 class="font-headline-md mb-6 leading-tight">
-            AFILADO INDUSTRIAL DE CUCHILLAS
+            Más de 30 años respaldando a los profesionales de la belleza
           </h3>
           <p class="text-body-lg text-on-surface-variant mb-8 font-medium">
-            Utilizamos tecnología de afilado por láser para garantizar un corte
-            milimétrico. El tratamiento incluye desinfección ultrasónica y
-            lubricación de grado quirúrgico.
+            Deja de perder tiempo y dinero llevando tus equipos a talleres
+            desconocidos. Llegamos con nuestra unidad móvil directamente a tu
+            peluquería en Bogotá y municipios aledaños. Trabajamos
+            exclusivamente con repuestos originales y te damos garantía por
+            escrito. Miles de estilistas y barberos ya nos conocen y confían en
+            nosotros porque dejamos tus herramientas listas en tu propia puerta,
+            sin que tengas que dejar de trabajar.
           </p>
           <a
-            href="/servicios"
+            href="/contacto"
             class="inline-block bg-on-background text-surface px-8 py-4 font-label-md uppercase tracking-wider hover:bg-primary transition-all"
           >
-            Conocer Proceso
+            CONTACTAR
           </a>
         </div>
       </div>

@@ -9,7 +9,8 @@ export const SITE_CONFIG = {
 
 export const SOCIAL_LINKS = {
   instagram: "https://instagram.com/jorge-taller",
-  whatsapp: "https://wa.me/573000000000",
+  whatsapp: "https://wa.me/573118328104",
+  whatsappChannel: "https://whatsapp.com/channel/0029VaK6o7q0k39Ue4j3o80k",
   linkedin: "https://linkedin.com/in/jorge-taller",
 };
 
@@ -17,5 +18,5 @@ export const NAV_LINKS = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: "/servicios" },
   { label: "Catálogo", href: "/catalogo" },
-  { label: "Soporte", href: "/soporte" },
+  { label: "Contacto", href: "/contacto" },
 ];

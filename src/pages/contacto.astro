@@ -11,17 +11,17 @@
  */
 
 import Layout from '../layouts/Layout.astro';
-import ContactHeader from '../components/soporte/ContactHeader.astro';
-import ServiceTicketForm from '../components/soporte/ServiceTicketForm.astro';
-import ContactSidebar from '../components/soporte/ContactSidebar.astro';
-import PrecisionMaintenance from '../components/soporte/PrecisionMaintenance.astro';
+import ContactHeader from '../components/contacto/ContactHeader.astro';
+import ServiceTicketForm from '../components/contacto/ServiceTicketForm.astro';
+import ContactSidebar from '../components/contacto/ContactSidebar.astro';
+import PrecisionMaintenance from '../components/contacto/PrecisionMaintenance.astro';
 ---
 
-<Layout title="Soporte y Reparaciones">
-  <main class="pt-32 pb-xl px-margin max-w-7xl mx-auto">
+<Layout title="Contacto">
+  <main class="pt-32 pb-j-xl px-j-margin max-w-7xl mx-auto">
     <ContactHeader />
     
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-j-xl">
       <ServiceTicketForm />
       <ContactSidebar />
     </div>
