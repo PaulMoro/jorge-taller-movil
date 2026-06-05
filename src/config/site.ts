@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
 export const SOCIAL_LINKS = {
   instagram: "https://instagram.com/jorge-taller",
   whatsapp: "https://wa.me/573118328104",
-  whatsappChannel: "https://whatsapp.com/channel/0029VaK6o7q0k39Ue4j3o80k",
+  whatsappChannel: "https://whatsapp.com/channel/0029VbD0L6P4tRrxtSzWan1p",
   linkedin: "https://linkedin.com/in/jorge-taller",
 };
 

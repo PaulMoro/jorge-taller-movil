@@ -16,23 +16,22 @@ const services = [
     id: "secadores",
     title: "MANTENIMIENTO DE SECADORES",
     description:
-      "Reparación y limpieza profunda. ¿Perdió potencia, hace ruidos extraños o ya no calienta?",
+      "Reparación y limpieza profunda. <br />¿Perdió potencia, hace ruidos extraños o ya no calienta?",
     icon: "air",
     bgIcon: "mode_fan",
     href: "/servicios",
     colSpan: "md:col-span-1",
     features: [
-      "Desarmado técnico y diagnóstico.",
+      "Diagnóstico técnico.",
       "Limpieza de cabello y químicos.",
       "Reparación de motor y escobillas.",
-      "Control de temperatura.",
     ],
   },
   {
     id: "planchas",
     title: "AJUSTE DE PLANCHAS",
     description:
-      "Reparación y control térmico. ¿No enciende, no calienta parejo o maltrata el cabello?",
+      "Reparación y control térmico. <br />¿No enciende, no calienta parejo o maltrata el cabello?",
     icon: "straighten",
     href: "/servicios",
     colSpan: "md:col-span-1",
@@ -46,14 +45,14 @@ const services = [
     id: "maquinas",
     title: "MÁQUINAS Y TIJERAS",
     description:
-      "Afilado y puesta a punto. ¿Da tirones al cortar, se calienta rápido o vibra demasiado?",
+      "Afilado y puesta a punto. <br />¿Da tirones al cortar, se calienta rápido o vibra demasiado?",
     icon: "content_cut",
     href: "/servicios",
     colSpan: "md:col-span-1",
     features: [
-      "Afilado profesional con maquinaria de alta precisión.",
+      "Afilado de alta precisión.",
       "Calibración del motor y potencia.",
-      "Alineación exacta de cuchillas seguro y sin tirones.",
+      "Alineación y ajuste de cuchillas.",
     ],
   },
 ];
@@ -88,9 +87,10 @@ const services = [
             <div class="relative z-10 pt-12 flex-grow flex flex-col justify-between">
               <div>
                 <h3 class="font-headline-sm mb-2">{service.title}</h3>
-                <p class="text-body-md text-on-surface-variant mb-4">
-                  {service.description}
-                </p>
+                <p
+                  class="text-body-md text-on-surface-variant mb-4"
+                  set:html={service.description}
+                />
 
                 {service.features && (
                   <ul class="text-label-md space-y-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
@@ -145,13 +145,15 @@ const services = [
             Más de 30 años respaldando a los profesionales de la belleza
           </h3>
           <p class="text-body-lg text-on-surface-variant mb-8 font-medium">
-            Deja de perder tiempo y dinero llevando tus equipos a talleres
+            No pierdas tiempo y dinero llevando tus equipos a talleres
             desconocidos. Llegamos con nuestra unidad móvil directamente a tu
             peluquería en Bogotá y municipios aledaños. Trabajamos
             exclusivamente con repuestos originales y te damos garantía por
             escrito. Miles de estilistas y barberos ya nos conocen y confían en
-            nosotros porque dejamos tus herramientas listas en tu propia puerta,
-            sin que tengas que dejar de trabajar.
+            nosotros porque dejamos sus herramientas listas en su propia puerta,
+            sin que tengan que parar de trabajar. El día no para y <span
+              class="text-primary font-bold">Jorge Taller Móvil</span
+            > está para ayudarte.
           </p>
           <a
             href="/contacto"
