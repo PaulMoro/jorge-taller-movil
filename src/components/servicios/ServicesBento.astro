@@ -1,4 +1,6 @@
 ---
+import { SOCIAL_LINKS } from '../../config/site';
+
 /**
  * SECCIÓN: Grilla Bento de Servicios
  * PROPÓSITO: Desglosar los 4 servicios técnicos principales con un diseño visualmente jerárquico.
@@ -45,9 +47,10 @@
                   eléctricos</li>
               </ul>
             </div>
-            <button
+            <a
+              href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer"
               class="mt-j-lg border border-on-background text-on-background px-6 py-2 text-label-md font-label-md uppercase hover:bg-on-background hover:text-white transition-all self-start">Consultar
-              Tarifa</button>
+              Tarifa</a>
           </div>
           <div class="md:w-1/2 relative h-64 md:h-auto">
             <img
@@ -63,14 +66,13 @@
         <div>
           <span class="text-label-md font-label-md text-primary uppercase mb-j-xs block">ARTESANAL</span>
           <h3 class="font-headline-sm text-headline-sm mb-j-sm">Afilado de Tijeras</h3>
-          <p class="text-on-surface-variant mb-j-md">Restauramos el ángulo de corte original mediante técnicas
-            tradicionales y piedras de alta granulometría.</p>
+          <p class="text-on-surface-variant mb-j-md">Restauramos el ángulo de corte original utilizando tecnología americana de alta precisión y herramientas especializadas.</p>
           <img class="w-full aspect-square object-cover mb-j-md grayscale group-hover:grayscale-0 transition-all"
             data-alt="Extreme close-up of a professional barber scissor blade being sharpened. Tiny metallic sparks are visible as the steel meets the sharpening surface. The aesthetic is industrial and high-precision, with a focus on the sharp edge and the texture of the high-quality steel. The background is a clean, neutral silver and grey, maintaining the minimalist technical style of the brand."
             src="https://lh3.googleusercontent.com/aida/ADBb0ugbVMbxh5w8mszc086MJB9XjWVPfzqpyTkG4fmYCch7xwS4qhJukTyyVt7FexQgBkKQW4COpur2WzvxClLsjn5B07cVFTEG98RXRuQE4QhXDkaodimj0aaWPLJ25dBWXDd9NRWaDF-YPE5HcH5cv27vsx6IkP0QYukg9d1ro3cyxamjExTTsafWs5ZgiKPURdnoyjF3596zQWeEOFmxE9RxZd-86EnFZjmyaPpLyqkp53_J3wYwpzJiBsF0Y7lMzAG-AgnQEmiZkh8" />
         </div>
         <a class="flex items-center gap-2 text-label-md font-label-md uppercase border-b border-transparent hover:border-primary w-fit transition-all"
-          href="#">Ver Galería de Afilado <span class="material-symbols-outlined">arrow_forward</span></a>
+          href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer">Agenda tu cita de afilado <span class="material-symbols-outlined">arrow_forward</span></a>
       </div>
       <!-- Calibration -->
       <div
