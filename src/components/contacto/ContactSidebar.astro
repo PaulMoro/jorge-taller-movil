@@ -91,9 +91,27 @@ import { SOCIAL_LINKS, SITE_CONFIG } from '../../config/site';
       <a class="material-symbols-outlined text-on-surface hover:text-primary transition-colors p-2 rounded hover:bg-primary-container/10" href={SOCIAL_LINKS.whatsapp} target="_blank">phone_in_talk</a>
       <a class="material-symbols-outlined text-on-surface hover:text-primary transition-colors p-2 rounded hover:bg-primary-container/10" href={`mailto:contacto@jorgerodriguez.com`}>mail</a>
     </div>
-    <div class="flex gap-4">
-      <a class="text-on-surface hover:text-primary transition-all font-bold tracking-tighter text-sm" target="_blank" href={SOCIAL_LINKS.instagram}>INSTAGRAM</a>
-      <a class="text-on-surface hover:text-primary transition-all font-bold tracking-tighter text-sm" target="_blank" href={SOCIAL_LINKS.linkedin}>LINKEDIN</a>
+    <div class="flex gap-2 flex-wrap justify-end">
+      {SOCIAL_LINKS.instagram && (
+        <a class="text-on-surface hover:text-primary transition-colors p-2 rounded hover:bg-primary-container/10 flex items-center justify-center" target="_blank" href={SOCIAL_LINKS.instagram} aria-label="Instagram">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+      )}
+      {SOCIAL_LINKS.facebook && (
+        <a class="text-on-surface hover:text-primary transition-colors p-2 rounded hover:bg-primary-container/10 flex items-center justify-center" target="_blank" href={SOCIAL_LINKS.facebook} aria-label="Facebook">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      )}
+      {SOCIAL_LINKS.Tiktok && (
+        <a class="text-on-surface hover:text-primary transition-colors p-2 rounded hover:bg-primary-container/10 flex items-center justify-center" target="_blank" href={SOCIAL_LINKS.Tiktok} aria-label="TikTok">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        </a>
+      )}
+      {SOCIAL_LINKS.linkedin && (
+        <a class="text-on-surface hover:text-primary transition-colors p-2 rounded hover:bg-primary-container/10 flex items-center justify-center" target="_blank" href={SOCIAL_LINKS.linkedin} aria-label="LinkedIn">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      )}
     </div>
   </div>
 </aside>

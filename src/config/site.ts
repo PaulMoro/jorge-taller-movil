@@ -2,16 +2,17 @@ export const SITE_CONFIG = {
   name: "Jorge Rodriguez",
   tagline: "Servicio Técnico Especializado",
   location: "Bogotá, Colombia",
-  address: "Carrera 15 # 82-10, Bogotá, Colombia",
-  email: "tech@strongemachine.com",
+  address: "Cundinamarca, Colombia",
   r2BaseUrl: "https://pub-9563c13b500c4152bd8d73e2c8f87d3c.r2.dev",
 };
 
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/jorge-taller",
+  instagram: "https://www.instagram.com/jorgetallermovil/",
+  facebook: "https://www.facebook.com/JorgeAlbertoRodri",
+  Tiktok: "https://www.tiktok.com/@jorgetallermovil",
   whatsapp: "https://wa.me/573118328104",
   whatsappChannel: "https://whatsapp.com/channel/0029VbD0L6P4tRrxtSzWan1p",
-  linkedin: "https://linkedin.com/in/jorge-taller",
+  linkedin: "",
 };
 
 export const NAV_LINKS = [
