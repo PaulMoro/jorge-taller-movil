@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Reemplaza 'tu-dominio.com' con el dominio real de tu web cuando la publiques
+Sitemap: https://jorgetaller.com/sitemap-index.xml

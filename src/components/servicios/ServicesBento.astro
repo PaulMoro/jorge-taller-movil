@@ -1,5 +1,6 @@
 ---
-import { SOCIAL_LINKS } from '../../config/site';
+import { SOCIAL_LINKS, SITE_CONFIG } from "../../config/site";
+const { r2BaseUrl } = SITE_CONFIG;
 
 /**
  * SECCIÓN: Grilla Bento de Servicios
@@ -18,98 +19,166 @@ import { SOCIAL_LINKS } from '../../config/site';
 <!-- Services Bento Grid -->
 <section class="py-j-xl bg-surface-container-lowest technical-grid">
   <div class="container mx-auto px-j-margin max-w-7xl">
-    <div class="flex flex-col md:flex-row justify-between items-end mb-j-xl gap-j-sm">
+    <div
+      class="flex flex-col md:flex-row justify-between items-end mb-j-xl gap-j-sm"
+    >
       <div class="max-w-xl">
-        <h2 class="font-headline-md text-headline-md text-on-background uppercase mb-j-xs">Nuestros Servicios</h2>
+        <h2
+          class="font-headline-md text-headline-md text-on-background uppercase mb-j-xs"
+        >
+          Nuestros Servicios
+        </h2>
         <div class="h-1 w-20 bg-primary"></div>
       </div>
-      <p class="text-on-surface-variant font-body-md max-w-xs">Soluciones especializadas para equipos BaByliss PRO y
-        herramientas de alta gama.</p>
+      <p class="text-on-surface-variant font-body-md max-w-xs">
+        Soluciones especializadas para equipos BaByliss PRO y herramientas de
+        alta gama.
+      </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-12 gap-j-gutter">
       <!-- Maintenance -->
       <div
-        class="md:col-span-8 group relative overflow-hidden bg-white border border-outline-variant hover:shadow-lg transition-all duration-300">
+        class="md:col-span-8 group relative overflow-hidden bg-white border border-outline-variant hover:shadow-lg transition-all duration-300"
+      >
         <div class="flex flex-col md:flex-row h-full">
           <div class="p-j-lg md:w-1/2 flex flex-col justify-between">
             <div>
-              <span class="text-label-md font-label-md text-primary uppercase mb-j-xs block">PREVENTIVO</span>
-              <h3 class="font-headline-sm text-headline-sm mb-j-sm">Mantenimiento Preventivo</h3>
+              <span
+                class="text-label-md font-label-md text-primary uppercase mb-j-xs block"
+                >PREVENTIVO</span
+              >
+              <h3 class="font-headline-sm text-headline-sm mb-j-sm">
+                Mantenimiento Preventivo
+              </h3>
               <ul class="space-y-2 text-on-surface-variant">
-                <li class="flex items-center gap-2"><span
-                    class="material-symbols-outlined text-[18px]">check_circle</span> Limpieza profunda ultrasónica
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[18px]"
+                    >check_circle</span
+                  > Limpieza profunda ultrasónica
                 </li>
-                <li class="flex items-center gap-2"><span
-                    class="material-symbols-outlined text-[18px]">check_circle</span> Lubricación de ejes
-                  cinemáticos</li>
-                <li class="flex items-center gap-2"><span
-                    class="material-symbols-outlined text-[18px]">check_circle</span> Revisión de circuitos
-                  eléctricos</li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[18px]"
+                    >check_circle</span
+                  > Lubricación de ejes cinemáticos
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[18px]"
+                    >check_circle</span
+                  > Revisión de circuitos eléctricos
+                </li>
               </ul>
             </div>
             <a
-              href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer"
-              class="mt-j-lg border border-on-background text-on-background px-6 py-2 text-label-md font-label-md uppercase hover:bg-on-background hover:text-white transition-all self-start">Consultar
-              Tarifa</a>
+              href={SOCIAL_LINKS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-j-lg border border-on-background text-on-background px-6 py-2 text-label-md font-label-md uppercase hover:bg-on-background hover:text-white transition-all self-start"
+              >Consultar Tarifa</a
+            >
           </div>
           <div class="md:w-1/2 relative h-64 md:h-auto">
             <img
-              class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              class="absolute inset-0 w-full h-full object-cover group-hover:grayscale-0 transition-all duration-500"
               data-alt="Professional technician's hands wearing black nitrile gloves carefully cleaning a high-end chrome hair clipper with specialized tools in a bright, minimalist workshop. The background is pristine and white with organized technical equipment. The lighting is soft and focused on the metallic reflections of the equipment, conveying a sense of premium service and expert precision."
-              src="https://lh3.googleusercontent.com/aida/ADBb0uikYsnyoozMzJ79Oyeub7SPgUftOgUYCGIxgdhD8WRw4Olt_wYTSHbQZiQKdKgZO2ds-VNzRLO0wMzHjevztZaapwfTnMrfO3yxThdC5u1AUsKWfmpRAdaxssXMCqhTjxJbhxwxAi8pjWu3n4U_qrrMyvSil-p2bqZARfjnqAKavRf0sTcxaj1Grbfx73e9sQBR3klkr-UlUpvKPouKgmFPQ8bRl5D7nOCy6Tmumsi4VnAqwg_k83iIJxZz5p_L7BKRCwAXXFw_ffU" />
+              src={`${r2BaseUrl}/marketing/mantenimiento.jpg`}
+            />
           </div>
         </div>
       </div>
       <!-- Sharpening -->
       <div
-        class="md:col-span-4 bg-white border border-outline-variant p-j-lg flex flex-col justify-between group hover:border-primary transition-all">
+        class="md:col-span-4 bg-white border border-outline-variant p-j-lg flex flex-col justify-between group hover:border-primary transition-all"
+      >
         <div>
-          <span class="text-label-md font-label-md text-primary uppercase mb-j-xs block">ARTESANAL</span>
-          <h3 class="font-headline-sm text-headline-sm mb-j-sm">Afilado de Tijeras</h3>
-          <p class="text-on-surface-variant mb-j-md">Restauramos el ángulo de corte original utilizando tecnología americana de alta precisión y herramientas especializadas.</p>
-          <img class="w-full aspect-square object-cover mb-j-md grayscale group-hover:grayscale-0 transition-all"
+          <span
+            class="text-label-md font-label-md text-primary uppercase mb-j-xs block"
+            >ARTESANAL</span
+          >
+          <h3 class="font-headline-sm text-headline-sm mb-j-sm">
+            Afilado de Tijeras
+          </h3>
+          <p class="text-on-surface-variant mb-j-md">
+            Restauramos el ángulo de corte original utilizando tecnología
+            americana de alta precisión y herramientas especializadas.
+          </p>
+          <img
+            class="w-full aspect-square object-cover mb-j-md grayscale group-hover:grayscale-0 transition-all"
             data-alt="Extreme close-up of a professional barber scissor blade being sharpened. Tiny metallic sparks are visible as the steel meets the sharpening surface. The aesthetic is industrial and high-precision, with a focus on the sharp edge and the texture of the high-quality steel. The background is a clean, neutral silver and grey, maintaining the minimalist technical style of the brand."
-            src="https://lh3.googleusercontent.com/aida/ADBb0ugbVMbxh5w8mszc086MJB9XjWVPfzqpyTkG4fmYCch7xwS4qhJukTyyVt7FexQgBkKQW4COpur2WzvxClLsjn5B07cVFTEG98RXRuQE4QhXDkaodimj0aaWPLJ25dBWXDd9NRWaDF-YPE5HcH5cv27vsx6IkP0QYukg9d1ro3cyxamjExTTsafWs5ZgiKPURdnoyjF3596zQWeEOFmxE9RxZd-86EnFZjmyaPpLyqkp53_J3wYwpzJiBsF0Y7lMzAG-AgnQEmiZkh8" />
+            src="https://lh3.googleusercontent.com/aida/ADBb0ugbVMbxh5w8mszc086MJB9XjWVPfzqpyTkG4fmYCch7xwS4qhJukTyyVt7FexQgBkKQW4COpur2WzvxClLsjn5B07cVFTEG98RXRuQE4QhXDkaodimj0aaWPLJ25dBWXDd9NRWaDF-YPE5HcH5cv27vsx6IkP0QYukg9d1ro3cyxamjExTTsafWs5ZgiKPURdnoyjF3596zQWeEOFmxE9RxZd-86EnFZjmyaPpLyqkp53_J3wYwpzJiBsF0Y7lMzAG-AgnQEmiZkh8"
+          />
         </div>
-        <a class="flex items-center gap-2 text-label-md font-label-md uppercase border-b border-transparent hover:border-primary w-fit transition-all"
-          href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer">Agenda tu cita de afilado <span class="material-symbols-outlined">arrow_forward</span></a>
+        <a
+          class="flex items-center gap-2 text-label-md font-label-md uppercase border-b border-transparent hover:border-primary w-fit transition-all"
+          href={SOCIAL_LINKS.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          >Agenda tu cita de afilado <span class="material-symbols-outlined"
+            >arrow_forward</span
+          ></a
+        >
       </div>
       <!-- Calibration -->
       <div
-        class="md:col-span-4 bg-surface-container-low border border-outline-variant p-j-lg flex flex-col justify-between group">
+        class="md:col-span-4 bg-surface-container-low border border-outline-variant p-j-lg flex flex-col justify-between group"
+      >
         <div class="mb-j-lg">
-          <span class="text-label-md font-label-md text-primary uppercase mb-j-xs block">PRECISIÓN</span>
-          <h3 class="font-headline-sm text-headline-sm mb-j-sm">Calibración de Máquinas</h3>
-          <p class="text-on-surface-variant">Ajuste micrométrico de cuchillas para cortes 'Zero Gap' sin irritación.
+          <span
+            class="text-label-md font-label-md text-primary uppercase mb-j-xs block"
+            >PRECISIÓN</span
+          >
+          <h3 class="font-headline-sm text-headline-sm mb-j-sm">
+            Calibración de Máquinas
+          </h3>
+          <p class="text-on-surface-variant">
+            Ajuste micrométrico de cuchillas para cortes 'Zero Gap' sin
+            irritación.
           </p>
         </div>
-        <div class="relative overflow-hidden h-48 border border-outline-variant">
-          <img class="w-full h-full object-cover"
+        <div
+          class="relative overflow-hidden h-48 border border-outline-variant"
+        >
+          <img
+            class="w-full h-full object-cover"
             data-alt="A technical blueprint overlaying a photograph of a barber machine motor and blade assembly. Technical measurements and red Sienna-colored focus points highlight the adjustment areas. The image is clean, brightly lit, and highly informative, emphasizing the scientific and calibrated approach to machine repair and performance optimization."
-            src="https://lh3.googleusercontent.com/aida/ADBb0ug26pimlYuVWW2uo-YQjPrhV5BqDljrMXNK7Zrv08gVvLuFGiHmbuyzw1VpnVs-M9l1j8rbHLOeMMC6thsFSmOWTzAVfwq_2qg5Dn87qIRhMGTFw8XUA6h47fyiYPvjlP5-WgTtTgO0MkzaQBe2S3Ex62B7niad1eOkffxMwbb85SnQfG3pmxo3WY5S3W4YqaNwKDHYqdzFk4kW_vf8sXMy8LX4rZHctnket40zUP2RAnACU5oP3UNIRC0eRydTXeWg1yJmYNbta10" />
+            src="https://lh3.googleusercontent.com/aida/ADBb0ug26pimlYuVWW2uo-YQjPrhV5BqDljrMXNK7Zrv08gVvLuFGiHmbuyzw1VpnVs-M9l1j8rbHLOeMMC6thsFSmOWTzAVfwq_2qg5Dn87qIRhMGTFw8XUA6h47fyiYPvjlP5-WgTtTgO0MkzaQBe2S3Ex62B7niad1eOkffxMwbb85SnQfG3pmxo3WY5S3W4YqaNwKDHYqdzFk4kW_vf8sXMy8LX4rZHctnket40zUP2RAnACU5oP3UNIRC0eRydTXeWg1yJmYNbta10"
+          />
         </div>
       </div>
       <!-- Spare Parts -->
-      <div class="md:col-span-8 bg-white border border-outline-variant p-j-lg group relative">
+      <div
+        class="md:col-span-8 bg-white border border-outline-variant p-j-lg group relative"
+      >
         <div class="flex flex-col md:flex-row gap-j-lg items-center">
           <div class="md:w-1/3">
-            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
+            <img
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
               data-alt="An organized display of genuine replacement parts for high-end hair machines, including motors, blades, and circuit boards. Each part is placed on a clean white surface with systematic spacing. The lighting is even and bright, highlighting the quality and authenticity of the components. The overall aesthetic is one of technical reliability and industrial excellence."
-              src="https://lh3.googleusercontent.com/aida/ADBb0ugy0lj4JoSo6_x9VihrFwUvYXf7aMWFT-Zute6824KHu_kt8OxfpdTkZSRdln3efNMiR27b3VpBWYTd0VVU0iH2wpdnHpho9r4EJExs1Mpx4D-YWwfkVpn3AJ9aLogM52rRoXx20P3ZPNw33ygTibV46kvgJb44PTBUo0-QHXRcolC_xESn7bJA61lQ7_pVVU5yKhm9jlhwFU1utCMnI-C2uoVPZZX1dNu7A2V3GpWk7Uc4GHOMf7W8VjpANmYTT9w0-juanUdBpkw" />
+              src="https://lh3.googleusercontent.com/aida/ADBb0ugy0lj4JoSo6_x9VihrFwUvYXf7aMWFT-Zute6824KHu_kt8OxfpdTkZSRdln3efNMiR27b3VpBWYTd0VVU0iH2wpdnHpho9r4EJExs1Mpx4D-YWwfkVpn3AJ9aLogM52rRoXx20P3ZPNw33ygTibV46kvgJb44PTBUo0-QHXRcolC_xESn7bJA61lQ7_pVVU5yKhm9jlhwFU1utCMnI-C2uoVPZZX1dNu7A2V3GpWk7Uc4GHOMf7W8VjpANmYTT9w0-juanUdBpkw"
+            />
           </div>
           <div class="md:w-2/3">
-            <span class="text-label-md font-label-md text-primary uppercase mb-j-xs block">ORIGINALES</span>
-            <h3 class="font-headline-sm text-headline-sm mb-j-sm">Repuestos Certificados</h3>
-            <p class="text-on-surface-variant mb-j-md">Contamos con un inventario exclusivo de motores, baterías y
-              carcasas originales BaByliss PRO. Garantía de fábrica en cada cambio.</p>
+            <span
+              class="text-label-md font-label-md text-primary uppercase mb-j-xs block"
+              >ORIGINALES</span
+            >
+            <h3 class="font-headline-sm text-headline-sm mb-j-sm">
+              Repuestos Certificados
+            </h3>
+            <p class="text-on-surface-variant mb-j-md">
+              Contamos con un inventario exclusivo de motores, baterías y
+              carcasas originales BaByliss PRO. Garantía de fábrica en cada
+              cambio.
+            </p>
             <div class="grid grid-cols-2 gap-j-sm">
               <div class="border-l-2 border-primary-container pl-j-sm">
-                <p class="text-label-md font-label-md uppercase">Disponibilidad</p>
+                <p class="text-label-md font-label-md uppercase">
+                  Disponibilidad
+                </p>
                 <p class="font-headline-sm">98%</p>
               </div>
               <div class="border-l-2 border-primary-container pl-j-sm">
                 <p class="text-label-md font-label-md uppercase">Garantía</p>
-                <p class="font-headline-sm">6 Meses</p>
+                <p class="font-headline-sm">3 Meses</p>
               </div>
             </div>
           </div>

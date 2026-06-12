@@ -14,21 +14,124 @@ import { SOCIAL_LINKS, SITE_CONFIG } from "../config/site";
         {SITE_CONFIG.name}
       </a>
       <p class="text-on-surface-variant font-['Space_Grotesk'] text-sm mb-j-md">
-        Líderes en servicio técnico especializado para salones profesionales y barberías de alta gama.
+        Líderes en servicio técnico especializado para salones profesionales y
+        barberías de alta gama.
       </p>
-      <div class="flex gap-4">
-        <a
-          class="material-symbols-outlined text-outline hover:text-primary transition-all"
-          href="#">share</a
+      <div class="flex gap-2 flex-wrap items-center mt-2">
+        <button
+          id="share-button"
+          class="material-symbols-outlined text-outline hover:text-primary transition-all p-2 rounded-full hover:bg-primary-container/10 flex items-center justify-center text-[22px] cursor-pointer"
+          aria-label="Compartir"
         >
-        <a
-          class="material-symbols-outlined text-outline hover:text-primary transition-all"
-          href={`mailto:${SITE_CONFIG.email}`}>mail</a
-        >
-        <a
-          class="material-symbols-outlined text-outline hover:text-primary transition-all"
-          href={SOCIAL_LINKS.whatsapp}>call</a
-        >
+          share
+        </button>
+        {
+          SOCIAL_LINKS.whatsapp && (
+            <a
+              class="material-symbols-outlined text-outline hover:text-primary transition-all p-2 rounded-full hover:bg-primary-container/10 flex items-center justify-center text-[22px]"
+              href={SOCIAL_LINKS.whatsapp}
+              target="_blank"
+            >
+              call
+            </a>
+          )
+        }
+        {
+          SOCIAL_LINKS.instagram && (
+            <a
+              class="text-outline hover:text-primary transition-all p-2 rounded-full hover:bg-primary-container/10 flex items-center justify-center"
+              target="_blank"
+              href={SOCIAL_LINKS.instagram}
+              aria-label="Instagram"
+            >
+              <svg
+                class="w-[22px] h-[22px]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </>
+              </svg>
+            </a>
+          )
+        }
+        {
+          SOCIAL_LINKS.facebook && (
+            <a
+              class="text-outline hover:text-primary transition-all p-2 rounded-full hover:bg-primary-container/10 flex items-center justify-center"
+              target="_blank"
+              href={SOCIAL_LINKS.facebook}
+              aria-label="Facebook"
+            >
+              <svg
+                class="w-[22px] h-[22px]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+          )
+        }
+        {
+          SOCIAL_LINKS.Tiktok && (
+            <a
+              class="text-outline hover:text-primary transition-all p-2 rounded-full hover:bg-primary-container/10 flex items-center justify-center"
+              target="_blank"
+              href={SOCIAL_LINKS.Tiktok}
+              aria-label="TikTok"
+            >
+              <svg
+                class="w-[22px] h-[22px]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+              </svg>
+            </a>
+          )
+        }
+        {
+          SOCIAL_LINKS.linkedin && (
+            <a
+              class="text-outline hover:text-primary transition-all p-2 rounded-full hover:bg-primary-container/10 flex items-center justify-center"
+              target="_blank"
+              href={SOCIAL_LINKS.linkedin}
+              aria-label="LinkedIn"
+            >
+              <svg
+                class="w-[22px] h-[22px]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </>
+              </svg>
+            </a>
+          )
+        }
       </div>
     </div>
     <div>
@@ -117,7 +220,8 @@ import { SOCIAL_LINKS, SITE_CONFIG } from "../config/site";
           class="text-on-surface-variant font-['Space_Grotesk'] text-xs uppercase tracking-widest"
         >
           © {new Date().getFullYear()}
-          {SITE_CONFIG.name}. Excelencia Técnica en Herramientas de Estilismo. Bogotá, Colombia. Distribuidor Oficial de BaByliss PRO.
+          {SITE_CONFIG.name}. Excelencia Técnica en Herramientas de Estilismo.
+          Bogotá, Colombia. Distribuidor Oficial de BaByliss PRO.
         </p>
       </div>
       <div class="flex gap-j-sm mt-4 md:mt-0">
@@ -137,39 +241,73 @@ import { SOCIAL_LINKS, SITE_CONFIG } from "../config/site";
 
   <!-- Yordana Saladen Marketing Section (Trigger Banner) -->
   <div class="bg-rose-50 py-4 px-4 text-center border-t border-rose-100">
-    <p class="text-rose-900 font-['Space_Grotesk'] text-sm md:text-base uppercase tracking-widest font-medium">
-      Estrategia de marketing por <button id="yordana-toggle" class="text-rose-500 underline hover:text-rose-700 transition-all font-bold">Yordana Saladen</button>
+    <p
+      class="text-rose-900 font-['Space_Grotesk'] text-sm md:text-base uppercase tracking-widest font-medium"
+    >
+      Estrategia de marketing por <button
+        id="yordana-toggle"
+        class="text-rose-500 underline hover:text-rose-700 transition-all font-bold"
+        >Yordana Saladen</button
+      >
     </p>
   </div>
 
   <!-- Yordana Saladen Marketing Section (Bottom Banner) -->
-  <div id="yordana-section" class="fixed bottom-0 left-0 w-full z-[100] bg-rose-50 text-rose-900 shadow-[0_-20px_50px_rgba(0,0,0,0.1)] overflow-y-auto max-h-[95vh] border-t border-rose-200 transform translate-y-full transition-transform duration-500 ease-in-out">
-    <button id="yordana-close" class="absolute top-4 right-4 md:top-6 md:right-6 text-rose-400 hover:text-rose-800 transition-colors p-2 rounded-full hover:bg-rose-100 flex items-center justify-center cursor-pointer">
+  <div
+    id="yordana-section"
+    class="fixed bottom-0 left-0 w-full z-[100] bg-rose-50 text-rose-900 shadow-[0_-20px_50px_rgba(0,0,0,0.1)] overflow-y-auto max-h-[95vh] border-t border-rose-200 transform translate-y-full transition-transform duration-500 ease-in-out"
+  >
+    <button
+      id="yordana-close"
+      class="absolute top-4 right-4 md:top-6 md:right-6 text-rose-400 hover:text-rose-800 transition-colors p-2 rounded-full hover:bg-rose-100 flex items-center justify-center cursor-pointer"
+    >
       <span class="material-symbols-outlined">close</span>
     </button>
     <div class="max-w-7xl mx-auto px-8 py-10 md:py-12">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
-          <h3 class="text-2xl md:text-3xl font-bold text-rose-950 mb-4 font-['Space_Grotesk']">
+          <h3
+            class="text-2xl md:text-3xl font-bold text-rose-950 mb-4 font-['Space_Grotesk']"
+          >
             Estrategia de Marketing Integral
           </h3>
           <p class="text-rose-800 mb-6 leading-relaxed">
-            Este proyecto web es una pieza fundamental dentro de una estrategia de marketing 360° diseñada y ejecutada por <strong>Yordana Saladen</strong>. El objetivo principal es consolidar la presencia digital de Jorge Rodríguez, destacando su expertise técnico de más de 30 años en el mercado.
+            Este proyecto web es una pieza fundamental dentro de una estrategia
+            de marketing 360° diseñada y ejecutada por <strong
+              >Yordana Saladen</strong
+            >. El objetivo principal es consolidar la presencia digital de Jorge
+            Rodríguez, destacando su expertise técnico de más de 30 años en el
+            mercado.
           </p>
           <div class="space-y-4">
-            <h4 class="font-bold text-rose-950 uppercase text-sm tracking-wider">Habilidades Clave:</h4>
+            <h4
+              class="font-bold text-rose-950 uppercase text-sm tracking-wider"
+            >
+              Habilidades Clave:
+            </h4>
             <ul class="space-y-2">
               <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-rose-500">campaign</span>
-                <span class="text-rose-700">Dirección de Marketing Digital</span>
+                <span class="material-symbols-outlined text-rose-500"
+                  >campaign</span
+                >
+                <span class="text-rose-700">Dirección de Marketing Digital</span
+                >
               </li>
               <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-rose-500">insights</span>
-                <span class="text-rose-700">Análisis y Estrategia de Crecimiento</span>
+                <span class="material-symbols-outlined text-rose-500"
+                  >insights</span
+                >
+                <span class="text-rose-700"
+                  >Análisis y Estrategia de Crecimiento</span
+                >
               </li>
               <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-rose-500">visibility</span>
-                <span class="text-rose-700">Posicionamiento de Marca (Branding)</span>
+                <span class="material-symbols-outlined text-rose-500"
+                  >visibility</span
+                >
+                <span class="text-rose-700"
+                  >Posicionamiento de Marca (Branding)</span
+                >
               </li>
               <li class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-rose-500">web</span>
@@ -178,19 +316,35 @@ import { SOCIAL_LINKS, SITE_CONFIG } from "../config/site";
             </ul>
           </div>
           <div class="mt-8">
-            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-rose-200 text-rose-900 rounded-lg hover:bg-rose-300 transition-colors font-medium">
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-rose-200 text-rose-900 rounded-lg hover:bg-rose-300 transition-colors font-medium"
+            >
               Contactar a Yordana
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
             </a>
           </div>
         </div>
         <div class="flex justify-center md:justify-end">
-          <div class="relative w-56 h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-xl ring-4 ring-rose-100">
-            <img src="/yordi_saladen.png" alt="Yordana Saladen - Estratega de Marketing" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-rose-900/40 to-transparent"></div>
+          <div
+            class="relative w-56 h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-xl ring-4 ring-rose-100"
+          >
+            <img
+              src="/yordi_saladen.png"
+              alt="Yordana Saladen - Estratega de Marketing"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-rose-900/40 to-transparent"
+            >
+            </div>
             <div class="absolute bottom-4 left-4 right-4 text-white">
               <p class="font-bold text-lg drop-shadow-md">Yordana Saladen</p>
-              <p class="text-sm opacity-90 text-rose-50 drop-shadow-md">Marketing Strategist</p>
+              <p class="text-sm opacity-90 text-rose-50 drop-shadow-md">
+                Marketing Strategist
+              </p>
             </div>
           </div>
         </div>
@@ -200,22 +354,70 @@ import { SOCIAL_LINKS, SITE_CONFIG } from "../config/site";
 </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('yordana-toggle');
-    const yordanaSection = document.getElementById('yordana-section');
-    const closeBtn = document.getElementById('yordana-close');
-    
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("yordana-toggle");
+    const yordanaSection = document.getElementById("yordana-section");
+    const closeBtn = document.getElementById("yordana-close");
+
     if (toggleBtn && yordanaSection) {
-      toggleBtn.addEventListener('click', (e) => {
+      toggleBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        yordanaSection.classList.toggle('translate-y-full');
+        yordanaSection.classList.toggle("translate-y-full");
       });
     }
 
     if (closeBtn && yordanaSection) {
-      closeBtn.addEventListener('click', () => {
-        yordanaSection.classList.add('translate-y-full');
+      closeBtn.addEventListener("click", () => {
+        yordanaSection.classList.add("translate-y-full");
       });
+    }
+
+    // Funcionalidad de Compartir
+    const shareBtn = document.getElementById("share-button");
+    if (shareBtn) {
+      shareBtn.addEventListener("click", async () => {
+        const shareData = {
+          title: "Jorge Rodriguez",
+          text: "Servicio Técnico Especializado - Jorge Rodriguez",
+          url: window.location.origin,
+        };
+
+        try {
+          if (navigator.share) {
+            await navigator.share(shareData);
+          } else {
+            await navigator.clipboard.writeText(window.location.href);
+            showToast("Enlace copiado al portapapeles");
+          }
+        } catch (err) {
+          if (err instanceof DOMException && err.name === "AbortError") {
+            return;
+          }
+          try {
+            await navigator.clipboard.writeText(window.location.href);
+            showToast("Enlace copiado al portapapeles");
+          } catch (clipErr) {
+            console.error("Error al copiar enlace: ", clipErr);
+          }
+        }
+      });
+    }
+
+    function showToast(message) {
+      const toast = document.createElement("div");
+      toast.className =
+        "fixed bottom-24 left-1/2 -translate-x-1/2 bg-neutral-900 text-neutral-100 px-6 py-3 rounded-full shadow-lg text-sm font-medium transition-all duration-300 transform opacity-0 translate-y-2 z-[999] font-['Space_Grotesk'] border border-neutral-800";
+      toast.textContent = message;
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove("opacity-0", "translate-y-2");
+      }, 50);
+
+      setTimeout(() => {
+        toast.classList.add("opacity-0", "translate-y-2");
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
     }
   });
 </script>
